@@ -25,6 +25,7 @@ word-wrap: break-word;
 img {
     max-width: 100%;
     margin: auto;
+   display:none;
 }
 
 h1 {
@@ -59,7 +60,7 @@ h1, h2, h3, h4, h5 {
 }
 .BODY img {
     margin:16px auto;
-    display:block;
+    display:none;
 }
 .REPLY_LI{
     border-top:1px solid #ddd;
@@ -124,4 +125,10 @@ h1, h2, h3, h4, h5 {
 }
 .BACK a:hover{
     color:#f40;
+}
+blockquote {
+display: none;
+}
+.SAY:first-line{
+display:none
 }
