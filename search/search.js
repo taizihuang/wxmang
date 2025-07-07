@@ -2,7 +2,7 @@ var tag_list = [];
 var tag_dict = {};
 var last_tag_dict = {};
 var is_online = true;
-var search_dir = ".";
+var search_dir = "https://cdn.jsdelivr.net/gh/taizihuang/wxmang/search";
 var reply_str = "";
 var comment_count = 0;
 
@@ -26,7 +26,7 @@ function searchURL() {
         $('label#offline-label')[0].style.backgroundColor = 'rgb(61, 151, 186)';
     } else {
         is_online = true;
-        search_dir = "."
+        search_dir = "https://cdn.jsdelivr.net/gh/taizihuang/wxmang/search";
         $('label#offline-label')[0].style.backgroundColor = 'rgb(169, 182, 231)';
     }
 }
