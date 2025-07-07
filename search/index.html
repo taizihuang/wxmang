@@ -1,0 +1,38 @@
+<html lang="zh-cn">
+
+<head>
+    <link rel="stylesheet" href="init.css">
+    <script src='jquery.min.js'></script>
+    <script src='search.js'></script>
+    <link rel="stylesheet" href="../html/fSelect.css">
+    <meta content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no" name=viewport>
+    <meta charset=utf-8>
+    <title>博客搜索</title>
+</head>
+
+<body>
+    <div class=BODY>
+        <div class="BACK"><a href="../index.html">返回索引页</a></div>
+        <h1>wxmang 文章搜索</h1>
+        </p>
+        <div clas="search" id="search">
+            <div class="input">
+                <input type="text" onkeydown="enter_search(event)" id="search-input">
+                <button type="button" onclick="search()">搜索</button>
+                <label onclick="searchURL()" id="offline-label">离线搜索</label>
+            </div>
+
+            <div id="search-result">
+                <div class="post_count"></div>
+                <div class="comment_count"></div>
+                <br><br>
+                <div class="POST_LI" id="post_li"></div>
+                <div class="REPLY_LI" id="reply_li"></div>
+            </div>
+        </div>
+    </div>
+</body>
+
+
+
+</html>

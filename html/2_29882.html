@@ -1,0 +1,426 @@
+<!DOCTYPE html><html><head>    
+    <meta content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no" name=viewport><meta charset=utf-8>
+    <script src="jquery-1.11.3.min.js"></script>
+    <link href="fSelect.css" rel="stylesheet" type="text/css">
+    <script src="supabase.js"></script>
+    <script src="tag.js"></script>
+    <link rel="stylesheet" href="./init.css">
+    <title>【原创】自己写个python小程序下载忙总老井履虎尾等人的文章</title>
+    </head>
+    <body><div class="BODY">
+    <div class="BACK"><a href="../index.html">返回索引页</a></div>
+    <h1>【原创】自己写个python小程序下载忙总老井履虎尾等人的文章</h1>
+    <p class="author">瓦斯</p>
+    <p class="DATE">2011-09-22 22:07:00</p>
+    <br><br>
+    <div class="POST">缘由：<br />
+<br />
+忙总的学识确实令人佩服，他可以在很短时间内就胸有成竹地写出一篇完整的了好文章来，连错别字都几乎找不到。<br />
+<br />
+1、不止一位网友制作了忙总的文集，供大家免费下载，特别感动。不知道他们是手工还是编程完成，总之都要花费不少精力和时间。<br />
+<br />
+2、看到Adol自己编程手机西西河的数据，也很感兴趣。<br />
+<br />
+3、忙总在丰言不断地有新帖子发出，我们需要一个自动程序来下载。<br />
+<br />
+4、想自己也学一点这方面的技术，那就试着写一点小程序来自动下载忙总的帖子吧。<br />
+<br />
+<br />
+<br />
+思路：<br />
+<br />
+1、获取忙总的所有主题帖子的链接；<br />
+2、对每个链接，获取其html文本，回帖中的好文暂时不考虑；<br />
+3、把html文本转换成txt，保存在硬盘上，方便手机等阅读方式。<br />
+<br />
+<br />
+平台：<br />
+<br />
+Adol用的是perl，可是我不大熟悉。查了一下资料，python在这方面也很强，就用python吧。<br />
+<br />
+<br />
+python升级到3.0以后，有些地方做了改进，资料上查到的命令要做相应的改变，我这里就直接用最新的命令了。<br />
+<br />
+<br />
+<br />
+一些具体细节：<br />
+<br />
+1、到忙总的家园，点击"查看他的全部主题"可以获得忙总所有主题帖的链接（http://www.fengyanforum.org/forum/search.php?action=finduserthreads＆uid=68），一切都将从这个链接开始。将来忙总有新帖了，也还是从这里开始搜索所有的主题帖子的链接。<br />
+顺便提一下，忙总是丰言的第68位注册的ID，算是元老级人物了。<br />
+<br />
+2、python有个FancyURLopener的类，可以用来打开网页获取html文本，生了我们很多事，把链接的url送进去，就得到了html。如果你只想保存具有格式的html那么技术工作到此就完成了。<img src="http://www.fengyanforum.org/forum/images/smilies/lol.gif" style="vertical-align: middle;" border="0" alt="lol" title="lol" /><br />
+<br />
+3、python有个HTMLParser的类，可以对html进行句法分析，从中获得各种链接、图片、文字等内容，就可以各取所需了。我们需要获取对忙总的所有主题帖子的链接，然后在对每个具体的链接去获取它的html，然后再做处理。<br />
+<br />
+4、对每个具体的主题帖链接，我们要从中读取忙总写的标题，把这个标题加上txt后缀当作文本文件的文件名，把html转换成txt之后保存到这个文本文件中去。当然，我们还需要实现创建和指定一个目录，用来存储所有下载的忙总文集，这里我设置为d:\wxmang。<br />
+<br />
+5、所有忙总主题链接都遍历过了之后，在d:\wxmang目录中预计就该产生一系列的文本文件，文件名是忙总帖子的标题，内容就是帖子中第一页的内容的，其余页的内容暂不考虑。<br />
+<!-- start: postbit_attachments_images_image -->
+<img src="attachment.php?aid=2035" class="attachment" alt="" />___
+<!-- end: postbit_attachments_images_image --><br />
+<br />
+6、目前我把程序的基本部分写出来了，不到80行，感觉python是很强。目前的功能还只能对指定的若干忙总主题帖的链接表分别进行下载保存，也就是程序中的urls。下一步需要完善的就是自动分析建立一个忙总帖子链接表urls，不要人工指定就全部自动化了。<br />
+<br />
+7、这个程序很粗陋，尤其是精简字符串功能cleanline很蹩脚，效果不是很好，欢迎大家帮忙改进。<img src="http://www.fengyanforum.org/forum/images/smilies/lol.gif" style="vertical-align: middle;" border="0" alt="lol" title="lol" /><br />
+<br />
+8、这个程序理所当然可以用来下载其他人的好帖子，完成之后只要提供家园首页中的所有主题帖的链接就可以了。<br />
+<br />
+python程序，我就抛砖引玉了，请高手们帮助优化和并提供下一步的建议：<br />
+<br />
+<br />
+<br />
+<br />
+<span style="font-weight: bold;">这是09-26-2011, 02:13 AM修改的保存为html的版本：</span><!-- start: postbit_attachments_attachment -->
+<br /><img src="images/attachtypes/zip.gif" border="0" alt=".zip" />__<a href="attachment.php?aid=2058" target="_blank">wxmang_etc.zip</a> (大小: 1.84 KB / 下载: 56)
+<!-- end: postbit_attachments_attachment -->、<!-- start: postbit_attachments_attachment -->
+<br /><img src="images/attachtypes/zip.gif" border="0" alt=".zip" />__<a href="attachment.php?aid=2042" target="_blank">wxmang.zip</a> (大小: 1.46 KB / 下载: 71)
+<!-- end: postbit_attachments_attachment --><br />
+<br />
+使用方法：<br />
+1、下载和安装python3.2<br />
+2、下载<!-- start: postbit_attachments_attachment -->
+<br /><img src="images/attachtypes/zip.gif" border="0" alt=".zip" />__<a href="attachment.php?aid=2060" target="_blank">wxmang_etc_ALL_pages.zip</a> (大小: 2.14 KB / 下载: 133)
+<!-- end: postbit_attachments_attachment -->或<!-- start: postbit_attachments_attachment -->
+<br /><img src="images/attachtypes/zip.gif" border="0" alt=".zip" />__<a href="attachment.php?aid=2059" target="_blank">wxmang_allpages.zip</a> (大小: 2 KB / 下载: 91)
+<!-- end: postbit_attachments_attachment -->或<!-- start: postbit_attachments_attachment -->
+<br /><img src="images/attachtypes/zip.gif" border="0" alt=".zip" />__<a href="attachment.php?aid=2058" target="_blank">wxmang_etc.zip</a> (大小: 1.84 KB / 下载: 56)
+<!-- end: postbit_attachments_attachment -->或<!-- start: postbit_attachments_attachment -->
+<br /><img src="images/attachtypes/zip.gif" border="0" alt=".zip" />__<a href="attachment.php?aid=2042" target="_blank">wxmang.zip</a> (大小: 1.46 KB / 下载: 71)
+<!-- end: postbit_attachments_attachment -->，解压放在d:\wxmang中，得到wxmang_etc.py或wxmang.py<br />
+3、资源管理器中双击wxmang_etc.py或wxmang.py（或在DOS窗口中运行python wxmang.py）<br />
+<br />
+<span style="font-weight: bold;">09-26-2011, 05:50 PM补充说明：</span><br />
+受到老井的点拨，做了一个做了一个配置文件config.txt，使用者可以根据自己的需要指定下载谁的帖子，放到不同的目录中去。目前我测试已下载履虎尾的40篇主题帖子。<br />
+在config.txt写下了三个作者的参数，每人三列，<br />
+第一列是id可以随便写，方便记忆就可以了；<br />
+第二列是存放目录请根据例子格式修改，最好是事先建立好那个目录；<br />
+第三列是该作者的搜索起始链接。列之间用TAB分割：<br />
+<blockquote><cite>引用:</cite>老井	D:\\laojing\\	<a href="http://www.fengyanforum.org/forum/search.php?action=finduserthreads＆uid=2837" target="_blank">http://www.fengyanforum.org/forum/search...s＆uid=68</a><br />
+履虎尾	D:\\lvhuwei\\	<a href="http://www.fengyanforum.org/forum/search.php?action=finduserthreads＆uid=470" target="_blank">http://www.fengyanforum.org/forum/search...ds＆uid=68</a><br />
+忙总	D:\\wxmang\\	<a href="http://www.fengyanforum.org/forum/search.php?action=finduserthreads＆uid=68" target="_blank">http://www.fengyanforum.org/forum/search...ads＆uid=68</a></blockquote>
+如何获取不同作者的作者的搜索起始链接？<br />
+到他的家园，看到"查看他的全部主题"的蓝色链接，用右键菜单复制链接，粘贴到config.txt的第三列就可以了。<br />
+你可以随便添加很多作者。<br />
+目前忙总的文章总多，我把他放在最后处理，别的作者目前帖子相对少一些可以较快处理完。<br />
+<br />
+<br />
+<span style="font-weight: bold;">09-26-2011, 11:04 PM:</span><br />
+增加<!-- start: postbit_attachments_attachment -->
+<br /><img src="images/attachtypes/zip.gif" border="0" alt=".zip" />__<a href="attachment.php?aid=2059" target="_blank">wxmang_allpages.zip</a> (大小: 2 KB / 下载: 91)
+<!-- end: postbit_attachments_attachment -->一个功能版本，对于每个主题帖子除了首页，还附带下载其余页的内容，保存的文件也会大几倍。<br />
+<br />
+新增完整版保存每个主题所有页的内容：<br />
+<!-- start: postbit_attachments_attachment -->
+<br /><img src="images/attachtypes/zip.gif" border="0" alt=".zip" />__<a href="attachment.php?aid=2060" target="_blank">wxmang_etc_ALL_pages.zip</a> (大小: 2.14 KB / 下载: 133)
+<!-- end: postbit_attachments_attachment --><br />
+<br />
+<span style="font-weight: bold;">01-03-2012, 06:54 PM</span>更新2012版：<br />
+<!-- start: postbit_attachments_attachment -->
+<br /><img src="images/attachtypes/zip.gif" border="0" alt=".zip" />__<a href="attachment.php?aid=2301" target="_blank">wxmang_etc_all_pages_2012.zip</a> (大小: 2.14 KB / 下载: 45)
+<!-- end: postbit_attachments_attachment -->
+			
+			
+			
+			
+				<!-- start: postbit_editedby -->
+<span class="smalltext">(这个帖子最后修改于: 01-03-2012 06:55 PM by <a href="http://www.fengyanforum.org/forum/user-41.html">瓦斯</a>.)</span>
+
+
+<!-- end: postbit_editedby --></div>
+    <div class="REPLY_LI">
+    <h2>12 条留言</h2>
+    <div class="LI">
+    <div class="USER"><span class="NAME" id=1900010100000020110922231400></span>
+    <div class="TIME">1900-01-01 00:00:00</div></div>
+    <div class="SAY"></div>
+    <div class="REPLY">这个厉害，我都是笨办法，一页页拷贝，累死人。<img src="http://www.fengyanforum.org/forum/images/smilies/zan.gif" style="vertical-align: middle;" border="0" alt="赞" title="赞" /><img src="http://www.fengyanforum.org/forum/images/smilies/zan.gif" style="vertical-align: middle;" border="0" alt="赞" title="赞" /><img src="http://www.fengyanforum.org/forum/images/smilies/laughing.gif" style="vertical-align: middle;" border="0" alt="捂嘴笑" title="捂嘴笑" /><br />
+<br />
+<blockquote><cite><span> (09-22-2011 10:07 PM)</span>瓦斯 提到: <a href="http://www.fengyanforum.org/forum/post-29882.html#pid29882" class="quick_jump">_</a></cite>缘由：<br />
+<br />
+忙总的学识确实令人佩服，他可以在很短时间内就胸有成竹地写出一片完整的了好文来，连错别字都几乎找不到。<br />
+<br />
+1、不止一位网友制作了忙总的文集，供大家免费下载，特别感动。不知道他们是手工还是编程完成，总之都要花费不少精力和时间。<br />
+<br />
+2、看到Adol自己编程手机西西河的数据，也很感兴趣。<br />
+<br />
+想自己也学一点这方面的技术，那就试着写一点小程序来自�......</blockquote>
+
+			
+			
+			
+			
+				
+    <div class="TIME">2011-09-22 23:14:00 回复</div>
+    </div>
+    </div>
+    <div class="LI">
+    <div class="USER"><span class="NAME" id=2011092317590019000101000000>瓦斯</span>
+    <div class="TIME">2011-09-23 17:59:00</div></div>
+    <div class="SAY">程序改好了，在我这里试验10分钟之内可以下载忙总在丰言的121篇主题帖子。自动用忙总的帖子标题加上.txt作为文件名，默认保存到d:\wxmang目录中去。<br />
+如果你想试用，可以将下面的程序复制保存成d:\wxmang\wxmang.py，然后在一个DOS窗口中打入python d:\wxmang\wxmang.py就可以自动获得忙总所有的帖子了。<br />
+<br />
+前提要求：你的电脑安装了python，这个程序不大，免费的，到处都可以下载到。<br />
+<br />
+本程序设计默认下载忙总在丰言的主题帖子，如果要下载别人的，将其中的搜索链接改掉就可以了。<br />
+<br />
+如果要用到丰言之外的论坛，需要稍作修改。<br />
+<br />
+源程序贴在下面，欢迎报告错误，欢迎提出改进意见。<br />
+<br />
+PHP 代码:<br />
+<code><span style="color: #FF8000">#!/usr/bin/python<br />#_-*-_coding:_UTF-8_-*-<br /></span><span style="color: #0000BB">import_io</span><span style="color: #007700">,</span><span style="color: #0000BB">sys</span><span style="color: #007700">,</span><span style="color: #0000BB">re<br />import_urllib</span><span style="color: #007700">.</span><span style="color: #0000BB">request</span><span style="color: #007700">,_</span><span style="color: #0000BB">urllib</span><span style="color: #007700">.</span><span style="color: #0000BB">parse</span><span style="color: #007700">,_</span><span style="color: #0000BB">urllib</span><span style="color: #007700">.</span><span style="color: #0000BB">error_</span><span style="color: #FF8000">#Python3<br /></span><span style="color: #0000BB">from_urllib</span><span style="color: #007700">.</span><span style="color: #0000BB">request_import_FancyURLopener<br />from_html</span><span style="color: #007700">.</span><span style="color: #0000BB">parser_import_HTMLParser<br />from_io_import_StringIO<br /><br />output_path</span><span style="color: #007700">=</span><span style="color: #DD0000">"D:&#092;&#092;wxmang&#092;&#092;"<br /></span><span style="color: #0000BB">url_author</span><span style="color: #007700">=</span><span style="color: #DD0000">"http://www.fengyanforum.org/forum/search.php?action=results＆sid=5499aced95b497d5fb8a7f3f937b3ac2"<br />_</span><span style="color: #FF8000">#_搜索忙总所有主题帖子，搜索别人的修改此链接<br /><br /></span><span style="color: #0000BB">def_get_web_content</span><span style="color: #007700">(</span><span style="color: #0000BB">url</span><span style="color: #007700">):<br />____</span><span style="color: #0000BB">myopener_</span><span style="color: #007700">=_</span><span style="color: #0000BB">FancyURLopener</span><span style="color: #007700">()__<br />____print(</span><span style="color: #DD0000">"reading_%s..."_</span><span style="color: #007700">%(</span><span style="color: #0000BB">url</span><span style="color: #007700">))<br />____</span><span style="color: #0000BB">content_</span><span style="color: #007700">=_</span><span style="color: #0000BB">myopener</span><span style="color: #007700">.</span><span style="color: #0000BB">open</span><span style="color: #007700">(</span><span style="color: #0000BB">url</span><span style="color: #007700">).</span><span style="color: #0000BB">read</span><span style="color: #007700">().</span><span style="color: #0000BB">decode</span><span style="color: #007700">(</span><span style="color: #DD0000">"utf-8"</span><span style="color: #007700">)<br />____return_</span><span style="color: #0000BB">content<br />_<br /></span><span style="color: #007700">class_</span><span style="color: #0000BB">MyHTMLParser</span><span style="color: #007700">(</span><span style="color: #0000BB">HTMLParser</span><span style="color: #007700">):<br />____</span><span style="color: #0000BB">def___init__</span><span style="color: #007700">(</span><span style="color: #0000BB">self</span><span style="color: #007700">):_<br />________</span><span style="color: #0000BB">HTMLParser</span><span style="color: #007700">.</span><span style="color: #0000BB">__init__</span><span style="color: #007700">(</span><span style="color: #0000BB">self</span><span style="color: #007700">)<br />________</span><span style="color: #0000BB">self</span><span style="color: #007700">.</span><span style="color: #0000BB">text_</span><span style="color: #007700">=_</span><span style="color: #0000BB">StringIO</span><span style="color: #007700">()<br />________</span><span style="color: #0000BB">self</span><span style="color: #007700">.</span><span style="color: #0000BB">js</span><span style="color: #007700">=</span><span style="color: #0000BB">0<br />________self</span><span style="color: #007700">.</span><span style="color: #0000BB">links</span><span style="color: #007700">=[]<br />____</span><span style="color: #0000BB">def_handle_starttag</span><span style="color: #007700">(</span><span style="color: #0000BB">self</span><span style="color: #007700">,_</span><span style="color: #0000BB">tag</span><span style="color: #007700">,_</span><span style="color: #0000BB">attrs</span><span style="color: #007700">):<br />________if_</span><span style="color: #0000BB">tag</span><span style="color: #007700">==</span><span style="color: #DD0000">'a'_</span><span style="color: #007700">and_</span><span style="color: #0000BB">attrs</span><span style="color: #007700">:<br />____________</span><span style="color: #0000BB">link</span><span style="color: #007700">=</span><span style="color: #0000BB">attrs</span><span style="color: #007700">[</span><span style="color: #0000BB">0</span><span style="color: #007700">][</span><span style="color: #0000BB">1</span><span style="color: #007700">]<br />____________if_</span><span style="color: #0000BB">link_not_in_self</span><span style="color: #007700">.</span><span style="color: #0000BB">links_</span><span style="color: #007700">&#092;<br />____________and_((</span><span style="color: #DD0000">"showthread.php?"_</span><span style="color: #0000BB">in_link_</span><span style="color: #007700">and_</span><span style="color: #DD0000">"page"_</span><span style="color: #0000BB">not_in_link_</span><span style="color: #007700">and_</span><span style="color: #DD0000">"lastpost"_</span><span style="color: #0000BB">not_in_link</span><span style="color: #007700">)_&#092;<br />________________or_</span><span style="color: #DD0000">"search.php?"_</span><span style="color: #0000BB">in_link_</span><span style="color: #007700">and_</span><span style="color: #DD0000">"page"_</span><span style="color: #0000BB">in_link</span><span style="color: #007700">):<br />________________</span><span style="color: #0000BB">self</span><span style="color: #007700">.</span><span style="color: #0000BB">links</span><span style="color: #007700">.</span><span style="color: #0000BB">append</span><span style="color: #007700">(</span><span style="color: #0000BB">link</span><span style="color: #007700">)<br />____</span><span style="color: #0000BB">def_handle_data</span><span style="color: #007700">(</span><span style="color: #0000BB">self</span><span style="color: #007700">,_</span><span style="color: #0000BB">data</span><span style="color: #007700">):<br />________if_</span><span style="color: #DD0000">"＜!--"_</span><span style="color: #0000BB">in_data</span><span style="color: #007700">:<br />____________</span><span style="color: #FF8000">#_print("js_tag_begin")<br />____________</span><span style="color: #0000BB">self</span><span style="color: #007700">.</span><span style="color: #0000BB">js</span><span style="color: #007700">=</span><span style="color: #0000BB">1<br />________elif_</span><span style="color: #DD0000">"--＞"_</span><span style="color: #0000BB">in_data</span><span style="color: #007700">:<br />____________</span><span style="color: #FF8000">#_print("js_tag_end")<br />____________</span><span style="color: #0000BB">self</span><span style="color: #007700">.</span><span style="color: #0000BB">js</span><span style="color: #007700">=</span><span style="color: #0000BB">0<br />________</span><span style="color: #007700">else:_</span><span style="color: #FF8000">#_self.js==0:<br />____________</span><span style="color: #0000BB">self</span><span style="color: #007700">.</span><span style="color: #0000BB">text</span><span style="color: #007700">.</span><span style="color: #0000BB">write</span><span style="color: #007700">(</span><span style="color: #0000BB">data</span><span style="color: #007700">)<br />____</span><span style="color: #0000BB">def_get_text</span><span style="color: #007700">(</span><span style="color: #0000BB">self</span><span style="color: #007700">):<br />________return_</span><span style="color: #0000BB">self</span><span style="color: #007700">.</span><span style="color: #0000BB">text</span><span style="color: #007700">.</span><span style="color: #0000BB">getvalue</span><span style="color: #007700">()<br />____</span><span style="color: #0000BB">def_get_link</span><span style="color: #007700">(</span><span style="color: #0000BB">self</span><span style="color: #007700">):<br />________return_</span><span style="color: #0000BB">self</span><span style="color: #007700">.</span><span style="color: #0000BB">links<br /><br />def_cleanline</span><span style="color: #007700">(</span><span style="color: #0000BB">line</span><span style="color: #007700">):<br />____</span><span style="color: #0000BB">line1</span><span style="color: #007700">=</span><span style="color: #DD0000">""<br />____</span><span style="color: #007700">while_</span><span style="color: #0000BB">1</span><span style="color: #007700">:<br />________</span><span style="color: #0000BB">line1</span><span style="color: #007700">=</span><span style="color: #0000BB">line</span><span style="color: #007700">.</span><span style="color: #0000BB">replace</span><span style="color: #007700">(</span><span style="color: #DD0000">'&#092;r&#092;n&#092;r&#092;n&#092;r&#092;n'</span><span style="color: #007700">,</span><span style="color: #DD0000">''</span><span style="color: #007700">).</span><span style="color: #0000BB">replace</span><span style="color: #007700">(</span><span style="color: #DD0000">'&#092;t'</span><span style="color: #007700">,</span><span style="color: #DD0000">''</span><span style="color: #007700">).</span><span style="color: #0000BB">replace</span><span style="color: #007700">(</span><span style="color: #DD0000">'&#092;n&#092;n&#092;r'</span><span style="color: #007700">,</span><span style="color: #DD0000">''</span><span style="color: #007700">).</span><span style="color: #0000BB">replace</span><span style="color: #007700">(</span><span style="color: #DD0000">'&#092;r&#092;n&#092;r'</span><span style="color: #007700">,</span><span style="color: #DD0000">''</span><span style="color: #007700">).</span><span style="color: #0000BB">replace</span><span style="color: #007700">(</span><span style="color: #DD0000">'&#092;n&#092;r&#092;n'</span><span style="color: #007700">,</span><span style="color: #DD0000">''</span><span style="color: #007700">)<br />________if_</span><span style="color: #0000BB">line1</span><span style="color: #007700">!=</span><span style="color: #0000BB">line</span><span style="color: #007700">:<br />____________</span><span style="color: #0000BB">line</span><span style="color: #007700">=</span><span style="color: #0000BB">line1<br />________</span><span style="color: #007700">else:<br />____________break<br />____return_</span><span style="color: #0000BB">line1<br />________<br />def_save_list2file</span><span style="color: #007700">(</span><span style="color: #0000BB">filename</span><span style="color: #007700">,</span><span style="color: #0000BB">mylist</span><span style="color: #007700">):<br />____print(</span><span style="color: #DD0000">"writing_%s_bytes_to_[_%s_]..."_</span><span style="color: #007700">%(</span><span style="color: #0000BB">len</span><span style="color: #007700">(</span><span style="color: #0000BB">mylist</span><span style="color: #007700">),</span><span style="color: #0000BB">filename</span><span style="color: #007700">))<br />____</span><span style="color: #0000BB">f_</span><span style="color: #007700">=_</span><span style="color: #0000BB">open</span><span style="color: #007700">(</span><span style="color: #0000BB">filename</span><span style="color: #007700">,</span><span style="color: #DD0000">"w"</span><span style="color: #007700">)<br />____for_</span><span style="color: #0000BB">line_in_mylist</span><span style="color: #007700">:<br />________try:<br />____________</span><span style="color: #0000BB">f</span><span style="color: #007700">.</span><span style="color: #0000BB">write</span><span style="color: #007700">(</span><span style="color: #DD0000">"%s"_</span><span style="color: #007700">%</span><span style="color: #0000BB">line</span><span style="color: #007700">)<br />________</span><span style="color: #0000BB">except_ValueError_</span><span style="color: #007700">as_</span><span style="color: #0000BB">e</span><span style="color: #007700">:<br />____________print(</span><span style="color: #0000BB">e</span><span style="color: #007700">)<br />____</span><span style="color: #0000BB">f</span><span style="color: #007700">.</span><span style="color: #0000BB">close</span><span style="color: #007700">()<br />____</span><span style="color: #FF8000">#_print("[_%s_]_closed."_%filename_)<br />____<br /></span><span style="color: #0000BB">def_save_url2file</span><span style="color: #007700">(</span><span style="color: #0000BB">output_path</span><span style="color: #007700">,</span><span style="color: #0000BB">url</span><span style="color: #007700">):<br />____</span><span style="color: #0000BB">content</span><span style="color: #007700">=</span><span style="color: #0000BB">get_web_content</span><span style="color: #007700">(</span><span style="color: #0000BB">url</span><span style="color: #007700">)<br />____</span><span style="color: #0000BB">title</span><span style="color: #007700">=</span><span style="color: #0000BB">content</span><span style="color: #007700">.</span><span style="color: #0000BB">splitlines</span><span style="color: #007700">()[</span><span style="color: #0000BB">3</span><span style="color: #007700">].</span><span style="color: #0000BB">replace</span><span style="color: #007700">(</span><span style="color: #DD0000">"＜title＞"</span><span style="color: #007700">,</span><span style="color: #DD0000">""</span><span style="color: #007700">).</span><span style="color: #0000BB">replace</span><span style="color: #007700">(</span><span style="color: #DD0000">"＜/title＞"</span><span style="color: #007700">,</span><span style="color: #DD0000">""</span><span style="color: #007700">).</span><span style="color: #0000BB">replace</span><span style="color: #007700">(</span><span style="color: #DD0000">":"</span><span style="color: #007700">,</span><span style="color: #DD0000">""</span><span style="color: #007700">).</span><span style="color: #0000BB">lstrip</span><span style="color: #007700">()<br />____</span><span style="color: #FF8000">#获取主帖标题，当作文件名<br />____</span><span style="color: #0000BB">p</span><span style="color: #007700">=</span><span style="color: #0000BB">MyHTMLParser</span><span style="color: #007700">()_<br />____</span><span style="color: #0000BB">p</span><span style="color: #007700">.</span><span style="color: #0000BB">feed</span><span style="color: #007700">(</span><span style="color: #0000BB">content</span><span style="color: #007700">)<br />____</span><span style="color: #0000BB">text_</span><span style="color: #007700">=_</span><span style="color: #0000BB">cleanline</span><span style="color: #007700">(</span><span style="color: #0000BB">p</span><span style="color: #007700">.</span><span style="color: #0000BB">get_text</span><span style="color: #007700">())<br />____</span><span style="color: #0000BB">save_list2file</span><span style="color: #007700">(</span><span style="color: #0000BB">output_path</span><span style="color: #007700">+</span><span style="color: #0000BB">title</span><span style="color: #007700">+</span><span style="color: #DD0000">".txt"</span><span style="color: #007700">,</span><span style="color: #0000BB">text</span><span style="color: #007700">)<br /><br /></span><span style="color: #0000BB">def_get_link2file</span><span style="color: #007700">(</span><span style="color: #0000BB">output_path</span><span style="color: #007700">,</span><span style="color: #0000BB">url_author</span><span style="color: #007700">):<br />____</span><span style="color: #0000BB">content</span><span style="color: #007700">=</span><span style="color: #0000BB">get_web_content</span><span style="color: #007700">(</span><span style="color: #0000BB">url_author</span><span style="color: #007700">)<br />____</span><span style="color: #0000BB">p</span><span style="color: #007700">=</span><span style="color: #0000BB">MyHTMLParser</span><span style="color: #007700">()_<br />____</span><span style="color: #0000BB">p</span><span style="color: #007700">.</span><span style="color: #0000BB">feed</span><span style="color: #007700">(</span><span style="color: #0000BB">content</span><span style="color: #007700">)<br />____</span><span style="color: #0000BB">links_</span><span style="color: #007700">=</span><span style="color: #0000BB">p</span><span style="color: #007700">.</span><span style="color: #0000BB">get_link</span><span style="color: #007700">()<br />____</span><span style="color: #FF8000">#_save_list2file(output_path+"urls.txt",links)<br />____</span><span style="color: #007700">return_</span><span style="color: #0000BB">links<br /><br />links_page1</span><span style="color: #007700">=</span><span style="color: #0000BB">get_link2file</span><span style="color: #007700">(</span><span style="color: #0000BB">output_path</span><span style="color: #007700">,</span><span style="color: #0000BB">url_author</span><span style="color: #007700">)_</span><span style="color: #FF8000">#用搜索忙总主题的首页链接搜索，返回第一页的所有链接<br /></span><span style="color: #0000BB">url_authors</span><span style="color: #007700">=[]_</span><span style="color: #FF8000">#其余主题页的链接<br /></span><span style="color: #0000BB">urls</span><span style="color: #007700">=[]_</span><span style="color: #FF8000">#_具体主题帖子的具体链接<br /></span><span style="color: #007700">for____</span><span style="color: #0000BB">link_in_links_page1</span><span style="color: #007700">:<br />____if_</span><span style="color: #DD0000">"showthread.php?"_</span><span style="color: #0000BB">in_link</span><span style="color: #007700">:<br />________</span><span style="color: #0000BB">urls</span><span style="color: #007700">.</span><span style="color: #0000BB">append</span><span style="color: #007700">(</span><span style="color: #0000BB">link</span><span style="color: #007700">)_</span><span style="color: #FF8000">#_保存搜索结果第一页中的每个主题帖链接<br />____</span><span style="color: #007700">else:<br />________</span><span style="color: #0000BB">url_authors</span><span style="color: #007700">.</span><span style="color: #0000BB">append</span><span style="color: #007700">(</span><span style="color: #0000BB">link</span><span style="color: #007700">)_</span><span style="color: #FF8000">#保存搜索结果第一页中显示的其余页的链接<br />#第一页的主帖链接搞定，其余搜索页的链接搞定<br /></span><span style="color: #007700">for_</span><span style="color: #0000BB">link_in_url_authors</span><span style="color: #007700">:_</span><span style="color: #FF8000">#对每个其余搜索页处理<br />____</span><span style="color: #0000BB">links_restpage</span><span style="color: #007700">=</span><span style="color: #0000BB">get_link2file</span><span style="color: #007700">(</span><span style="color: #0000BB">output_path</span><span style="color: #007700">,</span><span style="color: #DD0000">"http://www.fengyanforum.org/forum/"</span><span style="color: #007700">+</span><span style="color: #0000BB">link</span><span style="color: #007700">)_</span><span style="color: #FF8000">#_读取其余页的所有帖子链接<br />____</span><span style="color: #007700">for____</span><span style="color: #0000BB">link_in_links_restpage</span><span style="color: #007700">:<br />________if_</span><span style="color: #DD0000">"showthread.php?"_</span><span style="color: #0000BB">in_link</span><span style="color: #007700">:_</span><span style="color: #FF8000">#_只需要主帖子的链接了，不需要其余页的链接<br />____________</span><span style="color: #0000BB">urls</span><span style="color: #007700">.</span><span style="color: #0000BB">append</span><span style="color: #007700">(</span><span style="color: #0000BB">link</span><span style="color: #007700">)_<br /></span><span style="color: #FF8000">#至此所有页的主帖链接搜集完毕<br /></span><span style="color: #007700">for_</span><span style="color: #0000BB">url_in_urls</span><span style="color: #007700">:_</span><span style="color: #FF8000">#对每个主帖的链接处理，保存结果到主帖标题的文件名中去<br />____</span><span style="color: #0000BB">save_url2file</span><span style="color: #007700">(</span><span style="color: #0000BB">output_path</span><span style="color: #007700">,</span><span style="color: #DD0000">"http://www.fengyanforum.org/forum/"</span><span style="color: #007700">+</span><span style="color: #0000BB">url</span><span style="color: #007700">)_<br /></span></code>
+<!-- start: postbit_attachments_images_image -->
+<img src="attachment.php?aid=2037" class="attachment" alt="" />___
+<!-- end: postbit_attachments_images_image -->
+			
+			
+			
+			
+				<!-- start: postbit_editedby -->
+<span class="smalltext">(这个帖子最后修改于: 09-23-2011 06:07 PM by <a href="http://www.fengyanforum.org/forum/user-41.html">瓦斯</a>.)</span>
+
+
+<!-- end: postbit_editedby --></div>
+    </div>
+    <div class="LI">
+    <div class="USER"><span class="NAME" id=2011092414260020110924163200>井底望天</span>
+    <div class="TIME">2011-09-24 14:26:00</div></div>
+    <div class="SAY"><blockquote><cite><span> (09-22-2011 10:07 PM)</span>瓦斯 提到: <a href="http://www.fengyanforum.org/forum/post-29882.html#pid29882" class="quick_jump">_</a></cite>缘由：<br />
+<br />
+忙总的学识确实令人佩服，他可以在很短时间内就胸有成竹地写出一篇完整的了好文章来，连错别字都几乎找不到。<br />
+<br />
+1、不止一位网友制作了忙总的文集，供大家免费下载，特别感动。不知道他们是手工还是编程完成，总之都要花费不少精力和时间。<br />
+<br />
+2、看到Adol自己编程手机西西河的数据，也很感兴趣。<br />
+<br />
+3、忙总在丰言不断地有新帖子发出，我们需要一个自动程......</blockquote>
+<br />
+这两天，我正想着用python写个程序，往上贴帖子呢，呵呵。<br />
+<br />
+忙兄，要是有兴趣学python，我可以教你。<br />
+<br />
+对了前几天写一个管理VMware的程序，丫居然不支持python，害得我只好用Perl写了一个接口，痛苦啊，每一句都要加分号。
+			
+			
+			
+			
+				</div>
+    <div class="REPLY">谢谢，我暂时还是骑自行车吧，太快了我还控制不住。等你们把宝马开得顺畅了，我再来试试夏利。<img src="http://www.fengyanforum.org/forum/images/smilies/shangxinsile.gif" style="vertical-align: middle;" border="0" alt="泪流" title="泪流" /><img src="http://www.fengyanforum.org/forum/images/smilies/yun.gif" style="vertical-align: middle;" border="0" alt="晕" title="晕" /><img src="http://www.fengyanforum.org/forum/images/smilies/kelian.gif" style="vertical-align: middle;" border="0" alt="可怜" title="可怜" /><br />
+<br />
+<br />
+<blockquote><cite><span> (09-24-2011 02:26 PM)</span>井底望天 提到: <a href="http://www.fengyanforum.org/forum/post-30297.html#pid30297" class="quick_jump">_</a></cite>[quote='瓦斯' pid='29882' dateline='1316700449']<br />
+缘由：<br />
+<br />
+忙总的学识确实令人佩服，他可以在很短时间内就胸有成竹地写出一篇完整的了好文章来，连错别字都几乎找不到。<br />
+<br />
+1、不止一位网友制作了忙总的文集，供大家免费下载，特别感动。不知道他们是手工还是编程完成，总之都要花费不少精力和时间。<br />
+<br />
+2、看到Adol自己编程手机西西河的数据，也很感兴趣。<br />
+<br />
+3、忙总在丰言不��......</blockquote>
+
+			
+			
+			
+			
+				
+    <div class="TIME">2011-09-24 16:32:00 回复</div>
+    </div>
+    </div>
+    <div class="LI">
+    <div class="USER"><span class="NAME" id=2011101216230019000101000000>madercf</span>
+    <div class="TIME">2011-10-12 16:23:00</div></div>
+    <div class="SAY">盛赞楼主的工作！<br />
+提两点需求：<br />
+１）这个程序要是用到其它网站，比如西西河里会怎样？<br />
+２）对于一些人，可否设置定时或每隔一断时间去下载文章呢？<br />
+<br />
+<blockquote><cite><span> (09-23-2011 05:59 PM)</span>瓦斯 提到: <a href="http://www.fengyanforum.org/forum/post-30121.html#pid30121" class="quick_jump">_</a></cite>程序改好了，在我这里试验10分钟之内可以下载忙总在丰言的121篇主题帖子。自动用忙总的帖子标题加上.txt作为文件名，默认保存到d:\wxmang目录中去。<br />
+如果你想试用，可以将下面的程序复制保存成d:\wxmang\wxmang.py，然后在一个DOS窗口中打入python d:\wxmang\wxmang.py就可以自动获得忙总所有的帖子了。<br />
+<br />
+前提要求：你的电脑安装了python，这个程序不大，免费的，到处都可以下载到。<br />
+......</blockquote>
+
+			
+			
+			
+			
+				</div>
+    </div>
+    <div class="LI">
+    <div class="USER"><span class="NAME" id=2011101216490019000101000000>瓦斯</span>
+    <div class="TIME">2011-10-12 16:49:00</div></div>
+    <div class="SAY"><blockquote><cite><span> (10-12-2011 04:23 PM)</span>madercf 提到: <a href="http://www.fengyanforum.org/forum/post-34078.html#pid34078" class="quick_jump">_</a></cite>盛赞楼主的工作！<br />
+提两点需求：<br />
+１）这个程序要是用到其它网站，比如西西河里会怎样？<br />
+２）对于一些人，可否设置定时或每隔一断时间去下载文章呢？</blockquote>
+<br />
+感谢反馈！<br />
+<br />
+1、现在还不能直接用到西西河，如果熟悉编程的人在此基础上修改后用到西西河应该没问题。<br />
+<br />
+对于我这个凡人来说，用到西西河还有一个技术问题没有解决，就是如果直接输入西西河的网址，首先返回的是西西河那个临时的页面：“载入中...必要时请刷新页面”。我还没有找到一个方式，让程序等待到载入完整的页面之后才把结果保存下来。<br />
+<br />
+2、这应该是可以做到的，可以有两种方式：<br />
+a、这个下载程序就要一直开着，那我需要修改内容，让它定时重复下载。（其实你自己重复定时运行下载也很快）<br />
+b、在windows的任务中自己添加一个任务项，就像设置每周有一天半夜自动扫描病毒那样，自己设置什么时间自动启动这个下载程序。
+			
+			
+			
+			
+				</div>
+    </div>
+    <div class="LI">
+    <div class="USER"><span class="NAME" id=2011101217460019000101000000>madercf</span>
+    <div class="TIME">2011-10-12 17:46:00</div></div>
+    <div class="SAY">解答真快！<br />
+我现在碰到的一些问题，在楼里下了几个版本都是这个情况，不知道是什么原因，只有0个链接；而且明明配置文件也在，不知道为什么说找不到。<br />
+问题的截图见下<br />
+<br />
+<br />
+<br />
+<br />
+<blockquote><cite><span> (10-12-2011 04:49 PM)</span>瓦斯 提到: <a href="http://www.fengyanforum.org/forum/post-34085.html#pid34085" class="quick_jump">_</a></cite>感谢反馈！<br />
+<br />
+1、现在还不能直接用到西西河，如果熟悉编程的人在此基础上修改后用到西西河应该没问题。<br />
+<br />
+对于我这个凡人来说，用到西西河还有一个技术问题没�......</blockquote>
+
+			
+			<!-- start: postbit_attachments -->
+<br />
+<br />
+<fieldset>
+<legend><strong>附件</strong></legend>
+
+<!-- start: postbit_attachments_images -->
+<span class="smalltext"><strong>图片</strong></span><br />
+<!-- start: postbit_attachments_images_image -->
+<img src="attachment.php?aid=2085" class="attachment" alt="" />___
+<!-- end: postbit_attachments_images_image -->
+<br />
+<!-- end: postbit_attachments_images -->
+
+</fieldset>
+<!-- end: postbit_attachments -->
+			
+			
+				</div>
+    </div>
+    <div class="LI">
+    <div class="USER"><span class="NAME" id=2011101223270019000101000000>瓦斯</span>
+    <div class="TIME">2011-10-12 23:27:00</div></div>
+    <div class="SAY"><blockquote><cite><span> (10-12-2011 05:46 PM)</span>madercf 提到: <a href="http://www.fengyanforum.org/forum/post-34103.html#pid34103" class="quick_jump">_</a></cite>解答真快！<br />
+我现在碰到的一些问题，在楼里下了几个版本都是这个情况，不知道是什么原因，只有0个链接；而且明明配置文件也在，不知道为什么说找不到。<br />
+问题的截图见下</blockquote>
+<br />
+问题出在最近为了节省带宽把丰言的logo动态改成静态的时某些地方的修改。<br />
+把程序修改了一下，你式一下看可以吗？<br />
+<!-- start: postbit_attachments_attachment -->
+<br /><img src="images/attachtypes/zip.gif" border="0" alt=".zip" />__<a href="attachment.php?aid=2087" target="_blank">wxmang_etc_ALL_pages.zip</a> (大小: 2.14 KB / 下载: 29)
+<!-- end: postbit_attachments_attachment --><br />
+现在忙总帖子有些都到了50页之后了，下载起来是很花时间了。
+			
+			
+			
+			
+				</div>
+    </div>
+    <div class="LI">
+    <div class="USER"><span class="NAME" id=2011101309410019000101000000>madercf</span>
+    <div class="TIME">2011-10-13 09:41:00</div></div>
+    <div class="SAY">试过，可以的！<br />
+<br />
+但是仍有两个问题：<br />
+１）wxmang_etc_all_page.py和config.txt两个文件明明是放在同一个文件夹下的，为什么还是显示找不到config.txt呢？<br />
+２）查看已经下载的文件，发现点开的那一页可以打开；如果是第１页，那么点第２页、第n页，则打不开<br />
+<br />
+<br />
+<br />
+<br />
+<blockquote><cite><span> (10-12-2011 11:27 PM)</span>瓦斯 提到: <a href="http://www.fengyanforum.org/forum/post-34170.html#pid34170" class="quick_jump">_</a></cite>问题出在最近为了节省带宽把丰言的logo动态改成静态的时某些地方的修改。<br />
+把程序修改了一下，你式一下看可以吗？<br />
+<br />
+现在忙总帖子有些都到了50页......</blockquote>
+
+			
+			
+			
+			
+				</div>
+    </div>
+    <div class="LI">
+    <div class="USER"><span class="NAME" id=2011101315030019000101000000>瓦斯</span>
+    <div class="TIME">2011-10-13 15:03:00</div></div>
+    <div class="SAY"><blockquote><cite><span> (10-13-2011 09:41 AM)</span>madercf 提到: <a href="http://www.fengyanforum.org/forum/post-34221.html#pid34221" class="quick_jump">_</a></cite>试过，可以的！<br />
+<br />
+但是仍有两个问题：<br />
+１）wxmang_etc_all_page.py和config.txt两个文件明明是放在同一个文件夹下的，为什么还是显示找不到config.txt呢？<br />
+２）查看已经下载的文件，发现点开的那一页可以打开；如果是第１页，那么点第２页、第n页，则打不开<br />
+......</blockquote>
+<br />
+1、像你前面那个截图一样，如果你的当前目录是c:\python32那么程序也只在这里查找config.txt。如果你的当前目录在d:\wxmang那么config.txt也要放这里，运行命令可以是：c:\python32\python wxmang_etc_all_page.py。<br />
+<br />
+2、因为网页上的第n页是相对链接，也就是说省略了前面很长的一串丰言网址（绝对地址），如果这个文件本身在丰言服务器上那么可以找到第n页，而放到你的机器上时因为少绝对地址就找不到了。不过你不用去点击第n页了因为我们的程序已经把所有的页都下载堆积成一整大页了，你只要逐渐往下翻看就可以到最后一页了。
+			
+			
+			
+			
+				</div>
+    </div>
+    <div class="LI">
+    <div class="USER"><span class="NAME" id=2012010300260019000101000000>s0158</span>
+    <div class="TIME">2012-01-03 00:26:00</div></div>
+    <div class="SAY"><blockquote><cite><span> (10-13-2011 03:03 PM)</span>瓦斯 提到: <a href="http://www.fengyanforum.org/forum/post-34315.html#pid34315" class="quick_jump">_</a></cite>1、像你前面那个截图一样，如果你的当前目录是c:\python32那么程序也只在这里查找config.txt。如果你的当前目录在d:\wxmang那么config.txt也要放这里，运行命令可以是：c:\python32\python wxmang_etc_all_page.py。<br />
+<br />
+2、因为网页上的第n页是相对链接，也就是说省略了前面很长的一串丰言网址（绝对地址），如果这个文件本身在丰言......</blockquote>
+<br />
+老大，现在又不行了<img src="http://www.fengyanforum.org/forum/images/smilies/kelian.gif" style="vertical-align: middle;" border="0" alt="可怜" title="可怜" /><img src="http://www.fengyanforum.org/forum/images/smilies/shangxinsile.gif" style="vertical-align: middle;" border="0" alt="泪流" title="泪流" /><img src="http://www.fengyanforum.org/forum/images/smilies/shiwang.gif" style="vertical-align: middle;" border="0" alt="失望" title="失望" /><img src="http://www.fengyanforum.org/forum/images/smilies/sad2.gif" style="vertical-align: middle;" border="0" alt="伤心" title="伤心" /><img src="http://www.fengyanforum.org/forum/images/smilies/zhuakuang.gif" style="vertical-align: middle;" border="0" alt="抓狂" title="抓狂" />，麻烦你再鼓捣一下吧。
+			
+			
+			
+			
+				</div>
+    </div>
+    <div class="LI">
+    <div class="USER"><span class="NAME" id=2012010318570019000101000000>瓦斯</span>
+    <div class="TIME">2012-01-03 18:57:00</div></div>
+    <div class="SAY"><blockquote><cite><span> (01-03-2012 12:26 AM)</span>s0158 提到: <a href="http://www.fengyanforum.org/forum/post-52267.html#pid52267" class="quick_jump">_</a></cite>老大，现在又不行了<img src="http://www.fengyanforum.org/forum/images/smilies/kelian.gif" style="vertical-align: middle;" border="0" alt="可怜" title="可怜" /><img src="http://www.fengyanforum.org/forum/images/smilies/shangxinsile.gif" style="vertical-align: middle;" border="0" alt="泪流" title="泪流" /><img src="http://www.fengyanforum.org/forum/images/smilies/shiwang.gif" style="vertical-align: middle;" border="0" alt="失望" title="失望" /><img src="http://www.fengyanforum.org/forum/images/smilies/sad2.gif" style="vertical-align: middle;" border="0" alt="伤心" title="伤心" /><img src="http://www.fengyanforum.org/forum/images/smilies/zhuakuang.gif" style="vertical-align: middle;" border="0" alt="抓狂" title="抓狂" />，麻烦你再鼓捣一下吧。</blockquote>
+<br />
+呵呵，果然是，最近一段时间改版更新，有些参数变化了。<br />
+我相应修改了一下，这个2012版我使用了可以下载了：<br />
+<a href="http://www.fengyanforum.org/forum/attachment.php?aid=2301" target="_blank">2012版</a>
+			
+			
+			
+			
+				<!-- start: postbit_editedby -->
+<span class="smalltext">(这个帖子最后修改于: 01-03-2012 06:58 PM by <a href="http://www.fengyanforum.org/forum/user-41.html">瓦斯</a>.)</span>
+
+
+<!-- end: postbit_editedby --></div>
+    </div>
+    <div class="LI">
+    <div class="USER"><span class="NAME" id=2012010401020019000101000000>s0158</span>
+    <div class="TIME">2012-01-04 01:02:00</div></div>
+    <div class="SAY"><blockquote><cite><span> (01-03-2012 06:57 PM)</span>瓦斯 提到: <a href="http://www.fengyanforum.org/forum/post-52422.html#pid52422" class="quick_jump">_</a></cite>呵呵，果然是，最近一段时间改版更新，有些参数变化了。<br />
+我相应修改了一下，这个2012版我使用了可以下载了：<br />
+<a href="http://www.fengyanforum.org/forum/attachment.php?aid=2301" target="_blank">2012版</a></blockquote>
+<br />
+谢谢老大，现在能用了，不过好像还有点问题。<br />
+比如程序发现忙总主贴共8页，181个帖子，但我运行几次都是在下载到第四页，“（新帖）管理短篇N则：十二、财务总监的几个职责”（第91个主题）时程序退出，不知是哪里的的问题。<br />
+另外，我试了试下载忙总“他的全部帖子”不成功，是我的原因还是程序的限制？
+			
+			
+			
+			
+				<!-- start: postbit_editedby -->
+<span class="smalltext">(这个帖子最后修改于: 01-04-2012 01:04 AM by <a href="http://www.fengyanforum.org/forum/user-244.html">s0158</a>.)</span>
+
+
+<!-- end: postbit_editedby --></div>
+    </div>
+    </div>
+    </div>
+    <div class="BACK"><a href="../index.html">返回索引页</a></div>
+    </body></html>

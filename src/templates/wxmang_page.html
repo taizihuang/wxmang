@@ -1,0 +1,36 @@
+<!DOCTYPE html><html><head>    
+    <meta content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no" name=viewport><meta charset=utf-8>
+    <script src="jquery-1.11.3.min.js"></script>
+    <link href="fSelect.css" rel="stylesheet" type="text/css">
+    <script src="supabase.js"></script>
+    <script src="tag.js"></script>
+    <link rel="stylesheet" href="./init.css">
+    %for title, author, art_date, post in art_li:
+    <title>${title}</title>
+    </head>
+    <body><div class="BODY">
+    <div class="BACK"><a href="../index.html">返回索引页</a></div>
+    <h1>${title}</h1>
+    <p class="author">${author}</p>
+    <p class="DATE">${art_date}</p>
+    <br><br>
+    <div class="POST">${post}</div>
+    %endfor
+    <div class="REPLY_LI">
+    <h2>${len(reply_li)} 条留言</h2>
+    %for uuid, comment, reply, user, time, reply_time in reply_li:
+    <div class="LI">
+    <div class="USER"><span class="NAME" id=${uuid}>${user}</span>
+    <div class="TIME">${time}</div></div>
+    <div class="SAY">${comment}</div>
+    %if reply:
+    <div class="REPLY">${reply}
+    <div class="TIME">${reply_time} 回复</div>
+    </div>
+    %endif
+    </div>
+    %endfor
+    </div>
+    </div>
+    <div class="BACK"><a href="../index.html">返回索引页</a></div>
+    </body></html>

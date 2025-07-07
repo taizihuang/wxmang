@@ -1,0 +1,694 @@
+<!DOCTYPE html><html><head>    
+    <meta content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no" name=viewport><meta charset=utf-8>
+    <script src="jquery-1.11.3.min.js"></script>
+    <link href="fSelect.css" rel="stylesheet" type="text/css">
+    <script src="supabase.js"></script>
+    <script src="tag.js"></script>
+    <link rel="stylesheet" href="./init.css">
+    <title>如何做米酒-从原理到实践 （原创）</title>
+    </head>
+    <body><div class="BODY">
+    <div class="BACK"><a href="../index.html">返回索引页</a></div>
+    <h1>如何做米酒-从原理到实践 （原创）</h1>
+    <p class="author">berniezhu</p>
+    <p class="DATE">2011-12-07 15:27:00</p>
+    <br><br>
+    <div class="POST">引子：<br />
+          米酒又称酒糟，醪糟，是很多人都喜欢吃的东东，但是市场上卖的基本上都不好吃。一个是掺水掺的太多了，再一个是酒味和甜味都不足。我在北京，吃过最好的米酒就是7--8年前稻香村卖的，白塑料罐红盖，非常地道。可惜现在不卖了，大概是嫌麻烦，也不怎么挣钱。米酒这个东西做起来耗工耗时，卖便宜了自己觉得不合算；卖贵了，老百姓觉得就是一罐子米凭什么卖那么多钱，所以慢慢就从市场上消失了吧。超市里的米酒我吃过多种，以沃尔玛里自有品牌的为最好。但是也只能打个50分而已。想要吃地道的只能自己做。<br />
+          我从今年夏天开始做米酒，差不多有10多次了，总结了一些得失经验，这里和大家分享一下。<br />
+          米酒在南方多省都很流行，像湖南，湖北，四川等，不过俺南京的亲戚说他们从来没做过，也没吃过。不知有谁走过的地方多，能总结一下。<br />
+	<br />
+原理：<br />
+          米酒的酿造原理是利用根霉菌和酵母菌的共同作用。<br />
+          首先是根霉菌繁殖，繁殖过程中分泌淀粉酶，淀粉酶将淀粉水解为葡萄糖。米酒的甜味就是来自于此。注意根霉的繁殖是需要氧气的。根霉的种类很多，经过多年的筛选，目前市场上销售的估计都已经是固定的几种了。<br />
+         其次，酵母菌在无氧条件下（注意是无氧）进行糖酵解代谢，将葡萄糖分解为酒精和二氧化碳：C6H12O6 → 2 C2H5OH + 2 CO2；然而在有氧条件（注意这里的有氧是不利于米酒的）下，葡萄糖也可被完全氧化成二氧化碳和水：C6H12O6 + 6 O2 → 6 CO2 + 6 H2O；已经生成的酒精也可被氧化成为醋酸：C2H5OH + O2 → CH3COOH + H2O <br />
+<br />
+原料：<br />
+	米：<br />
+         做米酒最好用圆糯米。用大米也是可以的，但是口味不如圆糯米。因为糯米里面的支链淀粉含量非常高，而大米里面基本都是直链淀粉。用长糯米也是可以的，但是我的实践表明，长糯米口味不如圆糯米。而且超市里长糯米还比圆糯米贵。<br />
+          米的多少是根据锅、盆的大小决定的。我一般就做2斤米。糯米蒸完了以后很粘，拌起来是个力气活，如果拌不动，很可能会多加水，而水加多了是失败的重要原因。所以家里做的话，还是不要米太多了。<br />
+	酒曲：<br />
+         目前超市里的酒曲种类很少，我只见过安琪牌的。在淘宝上能搜索到很多，比如四川土质块状酒曲，苏州蜜蜂牌的酒曲等等。如果您方便，也可以去微生物研究所之类的地方直接购买根霉菌种，更纯更酷。一般酒曲是根霉菌和酵母菌合在一起。但是安琪酒曲的酵母菌含量太低，酿出来的米酒太甜，酒味基本没有。所以您最好也准备点酵母菌，这个超市里用来发面的酵母就可以。<br />
+<br />
+步骤：一泡，二蒸，三拌，四发酵。<br />
+         泡：把圆糯米放水里泡12-24小时，用手能捏碎就可以了。这样更有利于支链淀粉的水解。<br />
+         蒸：放蒸锅里，垫上屉布蒸20-50分钟。关键是要熟透。夹生了话吃起来就不爽了。（当然酿造完成之后也可以上锅再蒸，或煮，只不过因为有很多支链淀粉没有被分解，在煮一次就会很粘。）也听说过有人用煮饭的方法加工，米多了就怕会糊。<br />
+         拌：拌酒曲。待糯米放凉到30度左右就可以放酒曲，均匀拌开即可。酒曲的量视米的多少而定。拌完，在中间掏一个5-10cm的洞，盖上盖子即可。<br />
+         发酵：理论上28.5度是最佳温度。实际上差不多就行了。夏天室温即可。冬天放在暖气旁。只有春秋天不太方便。<br />
+<br />
+器具准备：<br />
+          很多人都说做米酒要防油，要消毒干净。这实际上就是为了抑制根霉菌和酵母菌以外的其他细菌繁殖。实际操作中确实需要注意，但是没必要到洁癖的程度。普通条件下洗干净的器皿，筷子，勺子就可以了，沾一点自来水也没关系。<br />
+          也有人说米酒酿造一定不能用金属器皿，其实无所谓。我就一直用不锈钢的盆子。好处是可以放点水直接在火上煮开，就算消毒了。里面的水放凉就拌在糯米里。盆的开口大，拌酒曲的时候也比较方便。<br />
+<br />
+经验：<br />
+         白毛：酿的米酒长白毛是很多人都碰到过的。这个白毛就是根霉菌的菌丝。原因是根霉菌放的太多了，繁殖太旺盛了。这个是没有关系的，您可以直接忽视，或者上锅煮一下让自己放心。<br />
+          绿毛、黑毛：如果长了绿毛黑毛之类的，那就别吃了。明显是别的细菌过于旺盛的繁殖了。一般来说，如果根霉菌正常繁殖，为占有压倒性的优势，从而抑制其他细菌的繁殖。但是如果出了事故，比如有油滴之类的，可能会导致异种细菌的过度繁殖，从而破坏整个菌种的平衡。<br />
+          加水不能太多：放凉后的糯米有可能太粘，表面太干，为了拌起来容易，可以加一点水。但是千万别加多了，因为水多了会把米粒和米粒之间的空气挤掉，而在最开始的根霉繁殖阶段是需要氧气的。水多了的结果就是根霉无法正常繁殖，米酒怎么酿都不甜。仅有的分解出来的一点葡萄糖也会被酒曲里的酵母菌分解为酒精和二氧化碳（无氧），或者水和二氧化碳（有氧）。我做失败的几次都是水放多了。切记切记！米酒中间掏的那个洞就是为了容纳分解出来的水分，以免填满米粒之间的空隙，保证根霉的有氧繁殖。<br />
+         没有酒味：前面已经说了，安琪酒曲的酵母含量太低，以至于米酒没有酒味。您可以先用酒曲酿36个小时，然后放入一定量的酵母（表明略洒一层就差不多了），拌开了再发酵12小时左右（这时候需要的是无氧发酵，所以中间不要掏洞了，表面也可以按结实）。从一开始就多放酵母也可以，但如果量多了，酵母菌的过度繁殖有可能抑制根霉的繁殖，从而导致整个发酵过程的失败。所以后放更容易成功。<br />
+         屉布：用大一点的屉布。蒸完了提起来比较方便。<br />
+         容器：用大开口的比较好，拌酒曲的时候方便。我用的是个36cm的不锈钢盆。发酵的时候不用密封，盖上盖子即可。如果需要保暖，用旧衣服一包就可以了。<br />
+         一定用凉水：酒曲就是细菌，所以温度高了就把细菌烫死了。<br />
+          防止变酸：米酒变酸就是因为酵母菌的有氧繁殖过度了，这个在开始的原理里面已经讲过，酵母菌有氧繁殖的时候会产生醋酸。有些土法制作的块状酒曲由于菌种不纯，菌群数量控制不好，有可能出现这个问题。用安琪的酒曲绝对不会（反而要后加酵母呢）。另外就是发酵完成后，放在冰箱里保存可以有效防止过度发酵变酸的问题。
+			
+			
+			
+			
+				<!-- start: postbit_editedby -->
+<span class="smalltext">(这个帖子最后修改于: 12-07-2011 03:29 PM by <a href="http://www.fengyanforum.org/forum/user-1877.html">berniezhu</a>.)</span>
+
+
+<!-- end: postbit_editedby --></div>
+    <div class="REPLY_LI">
+    <h2>19 条留言</h2>
+    <div class="LI">
+    <div class="USER"><span class="NAME" id=1900010100000020111207161100></span>
+    <div class="TIME">1900-01-01 00:00:00</div></div>
+    <div class="SAY"></div>
+    <div class="REPLY">好贴。我家以前每年春节前都做甜酒，程序差不多，遵义冬天冷，都要给用来发酵的大锑锅包被子，或者放在炉边加温。<br />
+<br />
+商品化的酒酿一个是水多，二是加了山梨醇防腐，所以口感比自己做的差很多。现在我们是每年到固定的农民家去买，然后自己密封（用玻璃罐头瓶装好甜酒后，在盖上插一注射针头，加热排除空气，再用腊封住针头口即可），可以保存半年不变质。我主要用于炒菜，夫人用于煮甜酒桂圆干红糖鸡蛋。<br />
+<br />
+<img src="http://www.fengyanforum.org/forum/images/smilies/laughing.gif" style="vertical-align: middle;" border="0" alt="捂嘴笑" title="捂嘴笑" /><img src="http://www.fengyanforum.org/forum/images/smilies/daxiao.gif" style="vertical-align: middle;" border="0" alt="大笑" title="大笑" /><img src="http://www.fengyanforum.org/forum/images/smilies/lol.gif" style="vertical-align: middle;" border="0" alt="lol" title="lol" /><br />
+<br />
+<br />
+<blockquote><cite><span> (12-07-2011 03:27 PM)</span>berniezhu 提到: <a href="http://www.fengyanforum.org/forum/post-43974.html#pid43974" class="quick_jump">_</a></cite>引子：<br />
+          米酒又称酒糟，醪糟，是很多人都喜欢吃的东东，但是市场上卖的基本上都不好吃。一个是掺水掺的太多了，再一个是酒味和甜味都不足。我在北京，吃过最好的米酒就是7--8年前稻香村卖的，白塑料罐红盖，非常地道。可惜现在不卖了，大概是嫌麻烦，也不怎么挣钱。米酒这个东西做起来耗工耗时，卖便宜了自己觉得不合算；卖贵了，老百姓觉得就是一罐子米凭什么卖那么多钱，所以慢慢就从市场上消失了吧。......</blockquote>
+
+			
+			
+			
+			
+				
+    <div class="TIME">2011-12-07 16:11:00 回复</div>
+    </div>
+    </div>
+    <div class="LI">
+    <div class="USER"><span class="NAME" id=2011120716220020111207163400>燕庐敕</span>
+    <div class="TIME">2011-12-07 16:22:00</div></div>
+    <div class="SAY">是不是忙总酒精类的东西只能沾这个，不能痛饮了～～～<br />
+<br />
+<img src="http://www.fengyanforum.org/forum/images/smilies/han.gif" style="vertical-align: middle;" border="0" alt="汗" title="汗" /><img src="http://www.fengyanforum.org/forum/images/smilies/yiwen.gif" style="vertical-align: middle;" border="0" alt="?" title="?" /><br />
+<blockquote><cite><span> (12-07-2011 04:11 PM)</span>wxmang 提到: <a href="http://www.fengyanforum.org/forum/post-43996.html#pid43996" class="quick_jump">_</a></cite>好贴。我家以前每年春节前都做甜酒，程序差不多，遵义冬天冷，都要给用来发酵的大锑锅包被子，或者放在炉边加温。<br />
+<br />
+商品化的酒酿一个是水多，二是加了山梨醇防腐，所以口感比自己做的差很多。现在我们是每年到固定的农民家去买，然后自己密封（用玻璃罐头瓶装好甜酒后，在盖上插一注射针头，加热排除空气，再用腊封住针头口即可），可以保存半年不变质。我主要用于炒菜，夫人用于煮甜酒桂圆干红糖鸡蛋。<br />
+<br />
+:捂嘴笑......</blockquote>
+
+			
+			
+			
+			
+				</div>
+    <div class="REPLY">我不能喝酒，现在还不能吃糖，酒酿做菜还可以接受。不过有过尝做菜的酒酿晕菜的历史，全身都发红。<br />
+<br />
+所以真的很不完美。<br />
+<br />
+<img src="http://www.fengyanforum.org/forum/images/smilies/laughing.gif" style="vertical-align: middle;" border="0" alt="捂嘴笑" title="捂嘴笑" /><img src="http://www.fengyanforum.org/forum/images/smilies/daxiao.gif" style="vertical-align: middle;" border="0" alt="大笑" title="大笑" /><img src="http://www.fengyanforum.org/forum/images/smilies/lol.gif" style="vertical-align: middle;" border="0" alt="lol" title="lol" /><br />
+<br />
+<blockquote><cite><span> (12-07-2011 04:22 PM)</span>燕庐敕 提到: <a href="http://www.fengyanforum.org/forum/post-44003.html#pid44003" class="quick_jump">_</a></cite>是不是忙总酒精类的东西只能沾这个，不能痛饮了～～～<br />
+<br />
+<img src="http://www.fengyanforum.org/forum/images/smilies/han.gif" style="vertical-align: middle;" border="0" alt="汗" title="汗" /><img src="http://www.fengyanforum.org/forum/images/smilies/yiwen.gif" style="vertical-align: middle;" border="0" alt="?" title="?" /></blockquote>
+
+			
+			
+			
+			
+				
+    <div class="TIME">2011-12-07 16:34:00 回复</div>
+    </div>
+    </div>
+    <div class="LI">
+    <div class="USER"><span class="NAME" id=2011120717060020111207171400>阿雷</span>
+    <div class="TIME">2011-12-07 17:06:00</div></div>
+    <div class="SAY"><blockquote><cite><span> (12-07-2011 04:11 PM)</span>wxmang 提到: <a href="http://www.fengyanforum.org/forum/post-43996.html#pid43996" class="quick_jump">_</a></cite>好贴。我家以前每年春节前都做甜酒，程序差不多，遵义冬天冷，都要给用来发酵的大锑锅包被子，或者放在炉边加温。<br />
+<br />
+商品化的酒酿一个是水多，二是加了山梨醇防腐，所以口感比自己做的差很多。现在我们是每年到固定的农民家去买，然后自己密封（用玻璃罐头瓶装好甜酒后，在盖上插一注射针头，加热排除空气，再用腊封住针头口即可），可以保存半年不变质。我主要用于炒菜，夫人用于煮甜酒桂圆干红糖鸡蛋。<br />
+<br />
+:捂嘴笑......</blockquote>
+甜酒桂圆干红糖鸡蛋是怎么一个煮法呢？有什么妙用呢？
+			
+			
+			
+			
+				</div>
+    <div class="REPLY">就是在一锅里烧开水，顺序放入桂圆干，甜酒，鸡蛋（煮成荷包蛋即可）和红糖即可。补血补气，暖胃暖腹，长期食用，面色红润，精神饱满。<br />
+<br />
+<img src="http://www.fengyanforum.org/forum/images/smilies/laughing.gif" style="vertical-align: middle;" border="0" alt="捂嘴笑" title="捂嘴笑" /><img src="http://www.fengyanforum.org/forum/images/smilies/daxiao.gif" style="vertical-align: middle;" border="0" alt="大笑" title="大笑" /><img src="http://www.fengyanforum.org/forum/images/smilies/lol.gif" style="vertical-align: middle;" border="0" alt="lol" title="lol" /><br />
+<br />
+<br />
+<blockquote><cite><span> (12-07-2011 05:06 PM)</span>阿雷 提到: <a href="http://www.fengyanforum.org/forum/post-44033.html#pid44033" class="quick_jump">_</a></cite>红糖鸡蛋是怎么一个煮法呢？有什么妙用呢？</blockquote>
+
+			
+			
+			
+			
+				
+    <div class="TIME">2011-12-07 17:14:00 回复</div>
+    </div>
+    </div>
+    <div class="LI">
+    <div class="USER"><span class="NAME" id=2011120718160020111208113400>燕庐敕</span>
+    <div class="TIME">2011-12-07 18:16:00</div></div>
+    <div class="SAY">我说的就是现在不能喝酒。当年在南七我估计你也是能抱着廉泉死吹的那种。不能吃糖那是没有办法。<br />
+<br />
+我一个重庆万州的同学，把我们喝剩下的半瓶红酒喝了以后，也是浑身发红---躺在床上，脚底都是红的。我们当时顾不上生气，只觉得好笑来着。张裕的金奖白兰地，似乎是37度5的。<br />
+<br />
+<br />
+<blockquote><cite><span> (12-07-2011 04:34 PM)</span>wxmang 提到: <a href="http://www.fengyanforum.org/forum/post-44011.html#pid44011" class="quick_jump">_</a></cite>我不能喝酒，现在还不能吃糖，酒酿做菜还可以接受。不过有过尝做菜的酒酿晕菜的历史，全身都发红。<br />
+<br />
+所以真的很不完美。<br />
+<br />
+<img src="http://www.fengyanforum.org/forum/images/smilies/laughing.gif" style="vertical-align: middle;" border="0" alt="捂嘴笑" title="捂嘴笑" /><img src="http://www.fengyanforum.org/forum/images/smilies/daxiao.gif" style="vertical-align: middle;" border="0" alt="大笑" title="大笑" /><img src="http://www.fengyanforum.org/forum/images/smilies/lol.gif" style="vertical-align: middle;" border="0" alt="lol" title="lol" /></blockquote>
+
+			
+			
+			
+			
+				</div>
+    <div class="REPLY">在南七技校也没喝，因为第一年回家过暑假，与施皖雄到杭州游览，天太热，一人买了一瓶冰镇啤酒，结果喝完我就掉到柳浪闻莺附近的西湖里去了，后来在刘英俊塑像前的草地上躺了好长时间，全身难受，胸闷欲吐。<br />
+<br />
+从此就知道啤酒也是不能喝的。<br />
+<br />
+<img src="http://www.fengyanforum.org/forum/images/smilies/laughing.gif" style="vertical-align: middle;" border="0" alt="捂嘴笑" title="捂嘴笑" /><img src="http://www.fengyanforum.org/forum/images/smilies/daxiao.gif" style="vertical-align: middle;" border="0" alt="大笑" title="大笑" /><img src="http://www.fengyanforum.org/forum/images/smilies/lol.gif" style="vertical-align: middle;" border="0" alt="lol" title="lol" /><br />
+<br />
+<blockquote><cite><span> (12-07-2011 06:16 PM)</span>燕庐敕 提到: <a href="http://www.fengyanforum.org/forum/post-44058.html#pid44058" class="quick_jump">_</a></cite>我说的就是现在不能喝酒。当年在南七我估计你也是能抱着廉泉死吹的那种。不能吃糖那是没有办法。<br />
+<br />
+我一个重庆万州的同学，把我们喝剩下的半瓶红酒喝了以后，也是浑身发红---躺在床上，脚底都是红的。我们当时顾不上生气，只觉得好笑来着。张裕的金奖白兰地，似乎是37度5的。</blockquote>
+
+			
+			
+			
+			
+				
+    <div class="TIME">2011-12-08 11:34:00 回复</div>
+    </div>
+    </div>
+    <div class="LI">
+    <div class="USER"><span class="NAME" id=2011120719410020111208104400>阿雷</span>
+    <div class="TIME">2011-12-07 19:41:00</div></div>
+    <div class="SAY"><blockquote><cite><span> (12-07-2011 05:14 PM)</span>wxmang 提到: <a href="http://www.fengyanforum.org/forum/post-44040.html#pid44040" class="quick_jump">_</a></cite>就是在一锅里烧开水，顺序放入桂圆干，甜酒，鸡蛋（煮成荷包蛋即可）和红糖即可。补血补气，暖胃暖腹，长期食用，面色红润，精神饱满。<br />
+<br />
+<img src="http://www.fengyanforum.org/forum/images/smilies/laughing.gif" style="vertical-align: middle;" border="0" alt="捂嘴笑" title="捂嘴笑" /><img src="http://www.fengyanforum.org/forum/images/smilies/daxiao.gif" style="vertical-align: middle;" border="0" alt="大笑" title="大笑" /><img src="http://www.fengyanforum.org/forum/images/smilies/lol.gif" style="vertical-align: middle;" border="0" alt="lol" title="lol" /></blockquote>
+谢谢，回去试试。给老婆补一补。
+			
+			
+			
+			
+				</div>
+    <div class="REPLY">好，模范老公。<img src="http://www.fengyanforum.org/forum/images/smilies/zan.gif" style="vertical-align: middle;" border="0" alt="赞" title="赞" /><br />
+<br />
+<img src="http://www.fengyanforum.org/forum/images/smilies/daxiao.gif" style="vertical-align: middle;" border="0" alt="大笑" title="大笑" /><img src="http://www.fengyanforum.org/forum/images/smilies/lol.gif" style="vertical-align: middle;" border="0" alt="lol" title="lol" /><br />
+<br />
+<br />
+<blockquote><cite><span> (12-07-2011 07:41 PM)</span>阿雷 提到: <a href="http://www.fengyanforum.org/forum/post-44071.html#pid44071" class="quick_jump">_</a></cite>谢谢，回去试试。给老婆补一补。</blockquote>
+
+			
+			
+			
+			
+				
+    <div class="TIME">2011-12-08 10:44:00 回复</div>
+    </div>
+    </div>
+    <div class="LI">
+    <div class="USER"><span class="NAME" id=2011120722330020111208103300>乡间小径</span>
+    <div class="TIME">2011-12-07 22:33:00</div></div>
+    <div class="SAY"><img src="http://www.fengyanforum.org/forum/images/smilies/zan.gif" style="vertical-align: middle;" border="0" alt="赞" title="赞" /><img src="http://www.fengyanforum.org/forum/images/smilies/zan.gif" style="vertical-align: middle;" border="0" alt="赞" title="赞" /><img src="http://www.fengyanforum.org/forum/images/smilies/zan.gif" style="vertical-align: middle;" border="0" alt="赞" title="赞" />又跟忙总学了一招。忙总的保存方法既科学又实用还是绿色工艺：巴氏灭菌法加上酒精消毒外带真空包装，而且加热的时候酒精损失很小。自己琢磨的？<br />
+进一步优化：米酒过滤，装入干净的玻璃酒瓶，瓶口用带针头软木塞塞好。加热灭菌后趁热拔去针头，蜡封。<br />
+贴上标签：WXMang牌米酒，后面的营销就不班门弄斧了。。。。。。<img src="http://www.fengyanforum.org/forum/images/smilies/lol.gif" style="vertical-align: middle;" border="0" alt="lol" title="lol" /><img src="http://www.fengyanforum.org/forum/images/smilies/laughing.gif" style="vertical-align: middle;" border="0" alt="捂嘴笑" title="捂嘴笑" /><img src="http://www.fengyanforum.org/forum/images/smilies/zuoguilian.gif" style="vertical-align: middle;" border="0" alt="做鬼脸" title="做鬼脸" /><br />
+<br />
+<blockquote><cite><span> (12-07-2011 04:11 PM)</span>wxmang 提到: <a href="http://www.fengyanforum.org/forum/post-43996.html#pid43996" class="quick_jump">_</a></cite>好贴。我家以前每年春节前都做甜酒，程序差不多，遵义冬天冷，都要给用来发酵的大锑锅包被子，或者放在炉边加温。<br />
+<br />
+商品化的酒酿一个是水多，二是加了山梨醇防腐，所以口感比自己做的差很多。现在我们是每年到固定的农民家去买，然后自己密封（用玻璃罐头瓶装好甜酒后，在盖上插一注射针头，加热排除空气，再用腊封住针头口即可），可以保存半年不变质。我主要用于炒菜，夫人用于煮甜酒桂圆干红糖鸡蛋。<br />
+<br />
+:捂嘴笑......</blockquote>
+
+			
+			
+			
+			
+				<!-- start: postbit_editedby -->
+<span class="smalltext">(这个帖子最后修改于: 12-07-2011 10:57 PM by <a href="http://www.fengyanforum.org/forum/user-135.html">乡间小径</a>.)</span>
+
+
+<!-- end: postbit_editedby --></div>
+    <div class="REPLY">这是祖传的，据我婆婆说的，她一直用这种方法做各种食品保鲜，包括西红柿酱，果酱，酸辣椒酱等等。<br />
+<br />
+<img src="http://www.fengyanforum.org/forum/images/smilies/laughing.gif" style="vertical-align: middle;" border="0" alt="捂嘴笑" title="捂嘴笑" /><img src="http://www.fengyanforum.org/forum/images/smilies/daxiao.gif" style="vertical-align: middle;" border="0" alt="大笑" title="大笑" /><img src="http://www.fengyanforum.org/forum/images/smilies/lol.gif" style="vertical-align: middle;" border="0" alt="lol" title="lol" /><br />
+<br />
+<br />
+<blockquote><cite><span> (12-07-2011 10:33 PM)</span>乡间小径 提到: <a href="http://www.fengyanforum.org/forum/post-44108.html#pid44108" class="quick_jump">_</a></cite><img src="http://www.fengyanforum.org/forum/images/smilies/zan.gif" style="vertical-align: middle;" border="0" alt="赞" title="赞" /><img src="http://www.fengyanforum.org/forum/images/smilies/zan.gif" style="vertical-align: middle;" border="0" alt="赞" title="赞" /><img src="http://www.fengyanforum.org/forum/images/smilies/zan.gif" style="vertical-align: middle;" border="0" alt="赞" title="赞" />又跟忙总学了一招。忙总的保存方法既科学又实用还是绿色工艺：巴氏灭菌法加上酒精消毒外带真空包装，而且加热的时候酒精损失很小。自己琢磨的？<br />
+进一步优化：米酒过滤，装入干净的玻璃酒瓶，瓶口用带针头软木塞塞好。加热灭菌后趁热拔去针头，蜡封。<br />
+贴上标签：WXMang牌米酒，后面的营销就不班门弄斧了。。。。。。<img src="http://www.fengyanforum.org/forum/images/smilies/lol.gif" style="vertical-align: middle;" border="0" alt="lol" title="lol" /><img src="http://www.fengyanforum.org/forum/images/smilies/laughing.gif" style="vertical-align: middle;" border="0" alt="捂嘴笑" title="捂嘴笑" /><img src="http://www.fengyanforum.org/forum/images/smilies/zuoguilian.gif" style="vertical-align: middle;" border="0" alt="做鬼脸" title="做鬼脸" /></blockquote>
+
+			
+			
+			
+			
+				
+    <div class="TIME">2011-12-08 10:33:00 回复</div>
+    </div>
+    </div>
+    <div class="LI">
+    <div class="USER"><span class="NAME" id=2011120804310020111208101500>金门桥</span>
+    <div class="TIME">2011-12-08 04:31:00</div></div>
+    <div class="SAY">这个和中医中的玉灵膏类似。玉灵膏就是十份桂圆干加一份糖，隔水蒸8、9个小时，大补气血。 <img src="http://www.fengyanforum.org/forum/images/smilies/laughing.gif" style="vertical-align: middle;" border="0" alt="捂嘴笑" title="捂嘴笑" /><img src="http://www.fengyanforum.org/forum/images/smilies/lol.gif" style="vertical-align: middle;" border="0" alt="lol" title="lol" /><br />
+<blockquote><cite><span> (12-07-2011 05:14 PM)</span>wxmang 提到: <a href="http://www.fengyanforum.org/forum/post-44040.html#pid44040" class="quick_jump">_</a></cite>就是在一锅里烧开水，顺序放入桂圆干，甜酒，鸡蛋（煮成荷包蛋即可）和红糖即可。补血补气，暖胃暖腹，长期食用，面色红润，精神饱满。<br />
+<br />
+<img src="http://www.fengyanforum.org/forum/images/smilies/laughing.gif" style="vertical-align: middle;" border="0" alt="捂嘴笑" title="捂嘴笑" /><img src="http://www.fengyanforum.org/forum/images/smilies/daxiao.gif" style="vertical-align: middle;" border="0" alt="大笑" title="大笑" /><img src="http://www.fengyanforum.org/forum/images/smilies/lol.gif" style="vertical-align: middle;" border="0" alt="lol" title="lol" /></blockquote>
+
+			
+			
+			
+			
+				</div>
+    <div class="REPLY">这种吃法是我们家传统吃法。据我的长辈讲，以前家里面女人晚上睡前，夏天是冰糖莲子羹一盏，冬天是燕窝粥一盏，春天是百合粥一盏，秋天就是红糖桂圆甜酒一盏。<br />
+<br />
+据说可以保持四季气血通畅，面色红润，心平气和。<br />
+<br />
+当然后来没条件吃高档货了，但是还是习惯晚上吃一点东西。<br />
+<br />
+<img src="http://www.fengyanforum.org/forum/images/smilies/laughing.gif" style="vertical-align: middle;" border="0" alt="捂嘴笑" title="捂嘴笑" /><img src="http://www.fengyanforum.org/forum/images/smilies/daxiao.gif" style="vertical-align: middle;" border="0" alt="大笑" title="大笑" /><img src="http://www.fengyanforum.org/forum/images/smilies/lol.gif" style="vertical-align: middle;" border="0" alt="lol" title="lol" /><br />
+<br />
+<blockquote><cite><span> (12-08-2011 04:31 AM)</span>金门桥 提到: <a href="http://www.fengyanforum.org/forum/post-44136.html#pid44136" class="quick_jump">_</a></cite>这个和中医中的玉灵膏类似。玉灵膏就是十份桂圆干加一份糖，隔水蒸8、9个小时，大补气血。 <img src="http://www.fengyanforum.org/forum/images/smilies/laughing.gif" style="vertical-align: middle;" border="0" alt="捂嘴笑" title="捂嘴笑" /><img src="http://www.fengyanforum.org/forum/images/smilies/lol.gif" style="vertical-align: middle;" border="0" alt="lol" title="lol" /></blockquote>
+
+			
+			
+			
+			
+				
+    <div class="TIME">2011-12-08 10:15:00 回复</div>
+    </div>
+    </div>
+    <div class="LI">
+    <div class="USER"><span class="NAME" id=2011120809450020111208095200>思炎</span>
+    <div class="TIME">2011-12-08 09:45:00</div></div>
+    <div class="SAY">酒酿能炒菜，第一次听说 <img src="http://www.fengyanforum.org/forum/images/smilies/cj.gif" style="vertical-align: middle;" border="0" alt="吃惊" title="吃惊" />
+			
+			
+			
+			
+				</div>
+    <div class="REPLY">红烧肉，红烧排骨等等放点酒酿代替料酒，效果更好。但是不能多，多了就是糟醉菜的味道。<br />
+<br />
+<img src="http://www.fengyanforum.org/forum/images/smilies/laughing.gif" style="vertical-align: middle;" border="0" alt="捂嘴笑" title="捂嘴笑" /><img src="http://www.fengyanforum.org/forum/images/smilies/daxiao.gif" style="vertical-align: middle;" border="0" alt="大笑" title="大笑" /><img src="http://www.fengyanforum.org/forum/images/smilies/lol.gif" style="vertical-align: middle;" border="0" alt="lol" title="lol" /><br />
+<br />
+<br />
+<br />
+<blockquote><cite><span> (12-08-2011 09:45 AM)</span>思炎 提到: <a href="http://www.fengyanforum.org/forum/post-44180.html#pid44180" class="quick_jump">_</a></cite>酒酿能炒菜，第一次听说 <img src="http://www.fengyanforum.org/forum/images/smilies/cj.gif" style="vertical-align: middle;" border="0" alt="吃惊" title="吃惊" /></blockquote>
+
+			
+			
+			
+			
+				
+    <div class="TIME">2011-12-08 09:52:00 回复</div>
+    </div>
+    </div>
+    <div class="LI">
+    <div class="USER"><span class="NAME" id=2011120811000020111208112500>乡间小径</span>
+    <div class="TIME">2011-12-08 11:00:00</div></div>
+    <div class="SAY">她老人家不简单啊！<img src="http://www.fengyanforum.org/forum/images/smilies/zan.gif" style="vertical-align: middle;" border="0" alt="赞" title="赞" /><br />
+<br />
+<blockquote><cite><span> (12-08-2011 10:33 AM)</span>wxmang 提到: <a href="http://www.fengyanforum.org/forum/post-44202.html#pid44202" class="quick_jump">_</a></cite>这是祖传的，据我婆婆说的，她一直用这种方法做各种食品保鲜，包括西红柿酱，果酱，酸辣椒酱等等。<br />
+<br />
+<img src="http://www.fengyanforum.org/forum/images/smilies/laughing.gif" style="vertical-align: middle;" border="0" alt="捂嘴笑" title="捂嘴笑" /><img src="http://www.fengyanforum.org/forum/images/smilies/daxiao.gif" style="vertical-align: middle;" border="0" alt="大笑" title="大笑" /><img src="http://www.fengyanforum.org/forum/images/smilies/lol.gif" style="vertical-align: middle;" border="0" alt="lol" title="lol" /></blockquote>
+
+			
+			
+			
+			
+				</div>
+    <div class="REPLY">是的，吃过自己做的西红柿酱，基本就不会再吃买的，差距巨大。可惜现在没有了。<br />
+<br />
+<br />
+<img src="http://www.fengyanforum.org/forum/images/smilies/tongueout-skype-smiley.gif" style="vertical-align: middle;" border="0" alt="tongueout" title="tongueout" /><img src="http://www.fengyanforum.org/forum/images/smilies/zan.gif" style="vertical-align: middle;" border="0" alt="赞" title="赞" /><br />
+<br />
+<blockquote><cite><span> (12-08-2011 11:00 AM)</span>乡间小径 提到: <a href="http://www.fengyanforum.org/forum/post-44215.html#pid44215" class="quick_jump">_</a></cite>她老人家不简单啊！<img src="http://www.fengyanforum.org/forum/images/smilies/zan.gif" style="vertical-align: middle;" border="0" alt="赞" title="赞" /></blockquote>
+
+			
+			
+			
+			
+				
+    <div class="TIME">2011-12-08 11:25:00 回复</div>
+    </div>
+    </div>
+    <div class="LI">
+    <div class="USER"><span class="NAME" id=2011120811590020111208174800>秋天蚂蚁</span>
+    <div class="TIME">2011-12-08 11:59:00</div></div>
+    <div class="SAY">燕窝粥看着比较高档（现在还不好买），其他的冰糖莲子啊，百合啊，应该都还是比较平民的吧？<br />
+<br />
+忙总，冰糖莲子羹和百合粥的做法有什么特别的讲究么？<br />
+<br />
+<br />
+<blockquote><cite><span> (12-08-2011 10:15 AM)</span>wxmang 提到: <a href="http://www.fengyanforum.org/forum/post-44190.html#pid44190" class="quick_jump">_</a></cite>这种吃法是我们家传统吃法。据我的长辈讲，以前家里面女人晚上睡前，夏天是冰糖莲子羹一盏，冬天是燕窝粥一盏，春天是百合粥一盏，秋天就是红糖桂圆甜酒一盏。<br />
+<br />
+据说可以保持四季气血通畅，面色红润，心平气和。<br />
+<br />
+当然后来没条件吃高档货了，但是还是习惯晚上吃一点东西。<br />
+<br />
+<img src="http://www.fengyanforum.org/forum/images/smilies/laughing.gif" style="vertical-align: middle;" border="0" alt="捂嘴笑" title="捂嘴笑" /><img src="http://www.fengyanforum.org/forum/images/smilies/daxiao.gif" style="vertical-align: middle;" border="0" alt="大笑" title="大笑" /><img src="http://www.fengyanforum.org/forum/images/smilies/lol.gif" style="vertical-align: middle;" border="0" alt="lol" title="lol" /></blockquote>
+
+			
+			
+			
+			
+				</div>
+    <div class="REPLY">其实非常简单，一般家庭就是难以持之以恒。而不能持之以恒是无效的。<br />
+<br />
+<span >冰糖莲子羹</span><br />
+<br />
+原料：哈士蟆油25克，红小枣50克，捅心莲子50克，冰糖300克。<br />
+<br />
+做法：（1）、将哈士蟆油放进盛器中，倒入沸水浸没，加盖焖透后，放在水中拣去黑丝和杂质，洗净。<br />
+<br />
+<br />
+（2）、把炒锅置旺火上，放入冰糖，舀入清水烧沸。然后，撇去浮沫，用细筛过滤。莲子用热水洗净。小枣洗净、去核，待用。<br />
+<br />
+<br />
+（3）、将哈士蟆油、莲子、小枣、冰糖水同放在炖盅中，加盖密封，上蒸笼用旺火蒸1小时左右至绵糯，取出原盅上席或分成10小碗上席均可。<br />
+<br />
+<br />
+功效：女性食用,可以美容养颜，滋阴养肝，调补内分泌，延缓衰老。<br />
+<br /><br />
+<br />
+<br />
+<span >银耳百合粥</span><br />
+<br />
+原料：干银耳10克，干百合10克，大米25克，冰糖适量。<br />
+<br />
+做法： 银耳用水泡涨，百合、大米洗净后同放入锅中，加水适量煮成粥，再加冰糖少许即可。<br />
+<br />
+功效：银耳有补脾开胃的功效，又有益气清肠的作用，还可以滋阴润肺，增强人体免疫力。 百合甘凉清润，清肺润燥止咳，清心安神定惊。<br />
+<br /><br />
+<br /><br />
+<br />
+<br />
+<br />
+<br />
+<blockquote><cite><span> (12-08-2011 11:59 AM)</span>秋天蚂蚁 提到:</cite>燕窝粥看着比较高档（现在还不好买），其他的冰糖莲子啊，百合啊，应该都还是比较平民的吧？<br />
+<br />
+忙总，冰糖莲子羹和百合粥的做法有什么特别的讲究么？</blockquote>
+    <div class="TIME">2011-12-08 17:48:00 回复</div>
+    </div>
+    </div>
+    <div class="LI">
+    <div class="USER"><span class="NAME" id=2011120812240020111208175300>燕庐敕</span>
+    <div class="TIME">2011-12-08 12:24:00</div></div>
+    <div class="SAY">那应该是体内缺乏氧化乙醇成为乙醛再到乙酸的那种酶了。<br />
+<br />
+东亚人很多都这样。<br />
+<blockquote><cite><span> (12-08-2011 11:34 AM)</span>wxmang 提到: <a href="http://www.fengyanforum.org/forum/post-44239.html#pid44239" class="quick_jump">_</a></cite>在南七技校也没喝，因为第一年回家过暑假，与施皖雄到杭州游览，天太热，一人买了一瓶冰镇啤酒，结果喝完我就掉到柳浪闻莺附近的西湖里去了，后来在刘英俊塑像前的草地上躺了好长时间，全身难受，胸闷欲吐。<br />
+<br />
+从此就知道啤酒也是不能喝的。<br />
+<br />
+<img src="http://www.fengyanforum.org/forum/images/smilies/laughing.gif" style="vertical-align: middle;" border="0" alt="捂嘴笑" title="捂嘴笑" /><img src="http://www.fengyanforum.org/forum/images/smilies/daxiao.gif" style="vertical-align: middle;" border="0" alt="大笑" title="大笑" /><img src="http://www.fengyanforum.org/forum/images/smilies/lol.gif" style="vertical-align: middle;" border="0" alt="lol" title="lol" /></blockquote>
+
+			
+			
+			
+			
+				</div>
+    <div class="REPLY">我想这是先天的，没办法了。<br />
+<br />
+<img src="http://www.fengyanforum.org/forum/images/smilies/laughing.gif" style="vertical-align: middle;" border="0" alt="捂嘴笑" title="捂嘴笑" /><img src="http://www.fengyanforum.org/forum/images/smilies/daxiao.gif" style="vertical-align: middle;" border="0" alt="大笑" title="大笑" /><img src="http://www.fengyanforum.org/forum/images/smilies/lol.gif" style="vertical-align: middle;" border="0" alt="lol" title="lol" /><br />
+<br />
+<br />
+<blockquote><cite><span> (12-08-2011 12:24 PM)</span>燕庐敕 提到: <a href="http://www.fengyanforum.org/forum/post-44251.html#pid44251" class="quick_jump">_</a></cite>那应该是体内缺乏氧化乙醇成为乙醛再到乙酸的那种酶了。<br />
+<br />
+东亚人很多都这样。</blockquote>
+
+			
+			
+			
+			
+				
+    <div class="TIME">2011-12-08 17:53:00 回复</div>
+    </div>
+    </div>
+    <div class="LI">
+    <div class="USER"><span class="NAME" id=2011120815220020111208180700>冷眼看天下</span>
+    <div class="TIME">2011-12-08 15:22:00</div></div>
+    <div class="SAY">太养身了<img src="http://www.fengyanforum.org/forum/images/smilies/clapping-skype-smiley.gif" style="vertical-align: middle;" border="0" alt="clapping" title="clapping" /><img src="http://www.fengyanforum.org/forum/images/smilies/clapping-skype-smiley.gif" style="vertical-align: middle;" border="0" alt="clapping" title="clapping" /><br />
+<br />
+某年冬天去国清寺，住边上酒店，鹅毛大雪。一边赏雪，一边吃热腾腾的黄酒 桂圆 炖鸡蛋，微醺，很暖。很悠远。<br />
+<br />
+<blockquote><cite><span> (12-07-2011 05:14 PM)</span>wxmang 提到: <a href="http://www.fengyanforum.org/forum/post-44040.html#pid44040" class="quick_jump">_</a></cite>就是在一锅里烧开水，顺序放入桂圆干，甜酒，鸡蛋（煮成荷包蛋即可）和红糖即可。补血补气，暖胃暖腹，长期食用，面色红润，精神饱满。<br />
+<br />
+<img src="http://www.fengyanforum.org/forum/images/smilies/laughing.gif" style="vertical-align: middle;" border="0" alt="捂嘴笑" title="捂嘴笑" /><img src="http://www.fengyanforum.org/forum/images/smilies/daxiao.gif" style="vertical-align: middle;" border="0" alt="大笑" title="大笑" /><img src="http://www.fengyanforum.org/forum/images/smilies/lol.gif" style="vertical-align: middle;" border="0" alt="lol" title="lol" /></blockquote>
+
+			
+			
+			
+			
+				<!-- start: postbit_editedby -->
+<span class="smalltext">(这个帖子最后修改于: 12-08-2011 03:33 PM by <a href="http://www.fengyanforum.org/forum/user-624.html">冷眼看天下</a>.)</span>
+
+
+<!-- end: postbit_editedby --></div>
+    <div class="REPLY">我个人感受，男人效果不如女人，女人如果长期吃，效果非常明显，要年轻很多。<br />
+<br />
+<img src="http://www.fengyanforum.org/forum/images/smilies/laughing.gif" style="vertical-align: middle;" border="0" alt="捂嘴笑" title="捂嘴笑" /><img src="http://www.fengyanforum.org/forum/images/smilies/daxiao.gif" style="vertical-align: middle;" border="0" alt="大笑" title="大笑" /><img src="http://www.fengyanforum.org/forum/images/smilies/lol.gif" style="vertical-align: middle;" border="0" alt="lol" title="lol" /><br />
+<br />
+<blockquote><cite><span> (12-08-2011 03:22 PM)</span>冷眼看天下 提到: <a href="http://www.fengyanforum.org/forum/post-44286.html#pid44286" class="quick_jump">_</a></cite>太养身了<img src="http://www.fengyanforum.org/forum/images/smilies/clapping-skype-smiley.gif" style="vertical-align: middle;" border="0" alt="clapping" title="clapping" /><img src="http://www.fengyanforum.org/forum/images/smilies/clapping-skype-smiley.gif" style="vertical-align: middle;" border="0" alt="clapping" title="clapping" /><br />
+<br />
+某年冬天去国清寺，住边上酒店，鹅毛大雪。一边赏雪，一边吃热腾腾的黄酒 桂圆 炖鸡蛋，微醺，很暖。很悠远。</blockquote>
+
+			
+			
+			
+			
+				
+    <div class="TIME">2011-12-08 18:07:00 回复</div>
+    </div>
+    </div>
+    <div class="LI">
+    <div class="USER"><span class="NAME" id=2011120820250020111209123900>夏侯</span>
+    <div class="TIME">2011-12-08 20:25:00</div></div>
+    <div class="SAY"><blockquote><cite><span> (12-08-2011 11:25 AM)</span>wxmang 提到: <a href="http://www.fengyanforum.org/forum/post-44229.html#pid44229" class="quick_jump">_</a></cite>是的，吃过自己做的西红柿酱，基本就不会再吃买的，差距巨大。可惜现在没有了。<br />
+<br />
+<br />
+<img src="http://www.fengyanforum.org/forum/images/smilies/tongueout-skype-smiley.gif" style="vertical-align: middle;" border="0" alt="tongueout" title="tongueout" /><img src="http://www.fengyanforum.org/forum/images/smilies/zan.gif" style="vertical-align: middle;" border="0" alt="赞" title="赞" /></blockquote>
+<br />
+确实这样，我老外婆今天忽然性质好自己买辣椒做了几瓶辣酱分送子女，也没有特意采购什么好辣椒，就市场上挑的，做出来的辣椒酱下饭鲜美无比，吃过就知道外面的太垃圾不能吃了，现在她老人家性质更好了，尝试做各种酱 - -
+			
+			
+			
+			
+				</div>
+    <div class="REPLY">自己做的东西没有防腐剂，这就很好。以前我吃方便面太多，以至于后来对防腐剂敏感，呕吐。<br />
+<br />
+<img src="http://www.fengyanforum.org/forum/images/smilies/laughing.gif" style="vertical-align: middle;" border="0" alt="捂嘴笑" title="捂嘴笑" /><img src="http://www.fengyanforum.org/forum/images/smilies/daxiao.gif" style="vertical-align: middle;" border="0" alt="大笑" title="大笑" /><img src="http://www.fengyanforum.org/forum/images/smilies/lol.gif" style="vertical-align: middle;" border="0" alt="lol" title="lol" /><br />
+<br />
+<blockquote><cite><span> (12-08-2011 08:25 PM)</span>夏侯 提到: <a href="http://www.fengyanforum.org/forum/post-44348.html#pid44348" class="quick_jump">_</a></cite>确实这样，我老外婆今天忽然性质好自己买辣椒做了几瓶辣酱分送子女，也没有特意采购什么好辣椒，就市场上挑的，做出来的辣椒酱下饭鲜美无比，吃过就知道外面的太垃圾不能吃了，现在她老人家性质更好了，尝试做各种酱 - -</blockquote>
+
+			
+			
+			
+			
+				
+    <div class="TIME">2011-12-09 12:39:00 回复</div>
+    </div>
+    </div>
+    <div class="LI">
+    <div class="USER"><span class="NAME" id=2011120823030020111209123200>乡间小径</span>
+    <div class="TIME">2011-12-08 23:03:00</div></div>
+    <div class="SAY">忙总，这哈士蟆油那么贵，一般家庭当然是难以持之以恒的了。不加哈士蟆油，能做到持之以恒就算不错啦。就算做的人愿意经常做，吃的人也不一定受得了。<img src="http://www.fengyanforum.org/forum/images/smilies/laughing.gif" style="vertical-align: middle;" border="0" alt="捂嘴笑" title="捂嘴笑" /><img src="http://www.fengyanforum.org/forum/images/smilies/zuoguilian.gif" style="vertical-align: middle;" border="0" alt="做鬼脸" title="做鬼脸" /><img src="http://www.fengyanforum.org/forum/images/smilies/lol.gif" style="vertical-align: middle;" border="0" alt="lol" title="lol" /><br />
+<br />
+<blockquote><cite><span> (12-08-2011 05:48 PM)</span>wxmang 提到: <a href="http://www.fengyanforum.org/forum/post-44299.html#pid44299" class="quick_jump">_</a></cite>其实非常简单，一般家庭就是难以持之以恒。而不能持之以恒是无效的。<br />
+<br />
+<span style="font-weight: bold;">冰糖莲子羹</span><br />
+<br />
+原料：哈士蟆油25克，红小枣50克，捅心莲子50克，冰糖300克。<br />
+<br />
+做法：（1）、将哈士蟆油放进盛器中，倒入沸水浸没，加盖焖透后，放在水中拣去黑丝和杂质，洗净。<br />
+<br />
+<br />
+（2）、把炒锅置旺火上，放入冰糖，舀入清水烧沸。然后，撇去浮沫，用细筛过滤。莲子用热水洗净。小枣洗净、去核，待用。......</blockquote>
+
+			
+			
+			
+			
+				</div>
+    <div class="REPLY">以前剥削阶级，专门有两个用人负责做宵夜，一个是给女性的，就是这些羹汤水之类，一个是负责给男性做的，主要是吃夜酒（一般是米酒或黄酒这种低度酒，后来时髦也有西洋葡萄酒）的下酒菜，当然也不是很金贵的菜，清淡为主，例如红油笋尖，青椒牛肝菌，清炒虾仁之类，然后吃碗清粥。<br />
+<br />
+现代人哪有这个闲心来搞这些东东（官宦人家有可能）。<br />
+<br />
+<br />
+<img src="http://www.fengyanforum.org/forum/images/smilies/laughing.gif" style="vertical-align: middle;" border="0" alt="捂嘴笑" title="捂嘴笑" /><img src="http://www.fengyanforum.org/forum/images/smilies/daxiao.gif" style="vertical-align: middle;" border="0" alt="大笑" title="大笑" /><img src="http://www.fengyanforum.org/forum/images/smilies/lol.gif" style="vertical-align: middle;" border="0" alt="lol" title="lol" /><br />
+<br />
+<blockquote><cite><span> (12-08-2011 11:03 PM)</span>乡间小径 提到: <a href="http://www.fengyanforum.org/forum/post-44368.html#pid44368" class="quick_jump">_</a></cite>忙总，这哈士蟆油那么贵，一般家庭当然是难以持之以恒的了。不加哈士蟆油，能做到持之以恒就算不错啦。就算做的人愿意经常做，吃的人也不一定受得了。<img src="http://www.fengyanforum.org/forum/images/smilies/laughing.gif" style="vertical-align: middle;" border="0" alt="捂嘴笑" title="捂嘴笑" /><img src="http://www.fengyanforum.org/forum/images/smilies/zuoguilian.gif" style="vertical-align: middle;" border="0" alt="做鬼脸" title="做鬼脸" /><img src="http://www.fengyanforum.org/forum/images/smilies/lol.gif" style="vertical-align: middle;" border="0" alt="lol" title="lol" /></blockquote>
+
+			
+			
+			
+			
+				
+    <div class="TIME">2011-12-09 12:32:00 回复</div>
+    </div>
+    </div>
+    <div class="LI">
+    <div class="USER"><span class="NAME" id=2011120823140020111209120700>地海</span>
+    <div class="TIME">2011-12-08 23:14:00</div></div>
+    <div class="SAY"><blockquote><cite><span> (12-08-2011 06:07 PM)</span>wxmang 提到: <a href="http://www.fengyanforum.org/forum/post-44309.html#pid44309" class="quick_jump">_</a></cite>我个人感受，男人效果不如女人，女人如果长期吃，效果非常明显，要年轻很多。<br />
+<br />
+<img src="http://www.fengyanforum.org/forum/images/smilies/laughing.gif" style="vertical-align: middle;" border="0" alt="捂嘴笑" title="捂嘴笑" /><img src="http://www.fengyanforum.org/forum/images/smilies/daxiao.gif" style="vertical-align: middle;" border="0" alt="大笑" title="大笑" /><img src="http://www.fengyanforum.org/forum/images/smilies/lol.gif" style="vertical-align: middle;" border="0" alt="lol" title="lol" /></blockquote>
+<br />
+看来是忙总做了和康总一起吃，然后忙总觉得自己效果不够显著，其实可能是忙总用脑太多，因为忙总大脑运转的时候会升温呀<img src="http://www.fengyanforum.org/forum/images/smilies/lol.gif" style="vertical-align: middle;" border="0" alt="lol" title="lol" /><img src="http://www.fengyanforum.org/forum/images/smilies/daxiao.gif" style="vertical-align: middle;" border="0" alt="大笑" title="大笑" /><img src="http://www.fengyanforum.org/forum/images/smilies/daxiao.gif" style="vertical-align: middle;" border="0" alt="大笑" title="大笑" />
+			
+			
+			
+			
+				</div>
+    <div class="REPLY">不是，我是觉得男人吃了没有用，还不如多休息，钓鱼，看电视，睡觉效果好；但是女人吃了效果从脸上就能看出来。<br />
+<br />
+<img src="http://www.fengyanforum.org/forum/images/smilies/laughing.gif" style="vertical-align: middle;" border="0" alt="捂嘴笑" title="捂嘴笑" /><img src="http://www.fengyanforum.org/forum/images/smilies/daxiao.gif" style="vertical-align: middle;" border="0" alt="大笑" title="大笑" /><img src="http://www.fengyanforum.org/forum/images/smilies/lol.gif" style="vertical-align: middle;" border="0" alt="lol" title="lol" /><br />
+<br />
+<br />
+<blockquote><cite><span> (12-08-2011 11:14 PM)</span>地海 提到: <a href="http://www.fengyanforum.org/forum/post-44371.html#pid44371" class="quick_jump">_</a></cite>看来是忙总做了和康总一起吃，然后忙总觉得自己效果不够显著，其实可能是忙总用脑太多，因为忙总大脑运转的时候会升温呀<img src="http://www.fengyanforum.org/forum/images/smilies/lol.gif" style="vertical-align: middle;" border="0" alt="lol" title="lol" /><img src="http://www.fengyanforum.org/forum/images/smilies/daxiao.gif" style="vertical-align: middle;" border="0" alt="大笑" title="大笑" /><img src="http://www.fengyanforum.org/forum/images/smilies/daxiao.gif" style="vertical-align: middle;" border="0" alt="大笑" title="大笑" /></blockquote>
+
+			
+			
+			
+			
+				
+    <div class="TIME">2011-12-09 12:07:00 回复</div>
+    </div>
+    </div>
+    <div class="LI">
+    <div class="USER"><span class="NAME" id=2011120903030020111209114800>金门桥</span>
+    <div class="TIME">2011-12-09 03:03:00</div></div>
+    <div class="SAY">哈哈，提到廉泉，想起当年那个厂长用纯正的合肥土话说的广告语：<br />
+<br />
+“廉泉啤酒，洁白细腻”<br />
+<br />
+<img src="http://www.fengyanforum.org/forum/images/smilies/daxiao.gif" style="vertical-align: middle;" border="0" alt="大笑" title="大笑" /><img src="http://www.fengyanforum.org/forum/images/smilies/lol.gif" style="vertical-align: middle;" border="0" alt="lol" title="lol" /><br />
+<br />
+<blockquote><cite><span> (12-08-2011 11:34 AM)</span>wxmang 提到: <a href="http://www.fengyanforum.org/forum/post-44239.html#pid44239" class="quick_jump">_</a></cite>在南七技校也没喝，因为第一年回家过暑假，与施皖雄到杭州游览，天太热，一人买了一瓶冰镇啤酒，结果喝完我就掉到柳浪闻莺附近的西湖里去了，后来在刘英俊塑像前的草地上躺了好长时间，全身难受，胸闷欲吐。<br />
+<br />
+从此就知道啤酒也是不能喝的。<br />
+<br />
+<img src="http://www.fengyanforum.org/forum/images/smilies/laughing.gif" style="vertical-align: middle;" border="0" alt="捂嘴笑" title="捂嘴笑" /><img src="http://www.fengyanforum.org/forum/images/smilies/daxiao.gif" style="vertical-align: middle;" border="0" alt="大笑" title="大笑" /><img src="http://www.fengyanforum.org/forum/images/smilies/lol.gif" style="vertical-align: middle;" border="0" alt="lol" title="lol" /></blockquote>
+
+			
+			
+			
+			
+				</div>
+    <div class="REPLY">其实我对酒的好坏没能力分别，二锅头和茅台在我看来一样。这个挺悲哀的。我母亲以前存了一大堆茅台酒（很多还是文革标语语录的），后来随便送人，因为实在没当回事情。如果知道现在茅台酒成为投资品，也许就留下来了。<br />
+<br />
+<img src="http://www.fengyanforum.org/forum/images/smilies/laughing.gif" style="vertical-align: middle;" border="0" alt="捂嘴笑" title="捂嘴笑" /><img src="http://www.fengyanforum.org/forum/images/smilies/daxiao.gif" style="vertical-align: middle;" border="0" alt="大笑" title="大笑" /><img src="http://www.fengyanforum.org/forum/images/smilies/lol.gif" style="vertical-align: middle;" border="0" alt="lol" title="lol" /><br />
+<br />
+<br />
+<br />
+<br />
+<blockquote><cite><span> (12-09-2011 03:03 AM)</span>金门桥 提到: <a href="http://www.fengyanforum.org/forum/post-44397.html#pid44397" class="quick_jump">_</a></cite>哈哈，提到廉泉，想起当年那个厂长用纯正的合肥土话说的广告语：<br />
+<br />
+“廉泉啤酒，洁白细腻”<br />
+<br />
+<img src="http://www.fengyanforum.org/forum/images/smilies/daxiao.gif" style="vertical-align: middle;" border="0" alt="大笑" title="大笑" /><img src="http://www.fengyanforum.org/forum/images/smilies/lol.gif" style="vertical-align: middle;" border="0" alt="lol" title="lol" /></blockquote>
+
+			
+			
+			
+			
+				
+    <div class="TIME">2011-12-09 11:48:00 回复</div>
+    </div>
+    </div>
+    <div class="LI">
+    <div class="USER"><span class="NAME" id=2011120916520020111210150500>晨池</span>
+    <div class="TIME">2011-12-09 16:52:00</div></div>
+    <div class="SAY">忙总，这样你就有一个新职业，可以做有机食品鉴定师，专门查防腐剂，一抓一个准！<img src="http://www.fengyanforum.org/forum/images/smilies/lol.gif" style="vertical-align: middle;" border="0" alt="lol" title="lol" /><br />
+<blockquote><cite><span> (12-09-2011 12:39 PM)</span>wxmang 提到: <a href="http://www.fengyanforum.org/forum/post-44472.html#pid44472" class="quick_jump">_</a></cite>自己做的东西没有防腐剂，这就很好。以前我吃方便面太多，以至于后来对防腐剂敏感，呕吐。<br />
+<br />
+<img src="http://www.fengyanforum.org/forum/images/smilies/laughing.gif" style="vertical-align: middle;" border="0" alt="捂嘴笑" title="捂嘴笑" /><img src="http://www.fengyanforum.org/forum/images/smilies/daxiao.gif" style="vertical-align: middle;" border="0" alt="大笑" title="大笑" /><img src="http://www.fengyanforum.org/forum/images/smilies/lol.gif" style="vertical-align: middle;" border="0" alt="lol" title="lol" /></blockquote>
+
+			
+			
+			
+			
+				</div>
+    <div class="REPLY">你这是想谋杀我？每一次试探都是在玩命。谁知道他们加的是什么玩意。<br />
+<br />
+<img src="http://www.fengyanforum.org/forum/images/smilies/laughing.gif" style="vertical-align: middle;" border="0" alt="捂嘴笑" title="捂嘴笑" /><img src="http://www.fengyanforum.org/forum/images/smilies/daxiao.gif" style="vertical-align: middle;" border="0" alt="大笑" title="大笑" /><img src="http://www.fengyanforum.org/forum/images/smilies/lol.gif" style="vertical-align: middle;" border="0" alt="lol" title="lol" /><br />
+<br />
+<br />
+<blockquote><cite><span> (12-09-2011 04:52 PM)</span>晨池 提到: <a href="http://www.fengyanforum.org/forum/post-44527.html#pid44527" class="quick_jump">_</a></cite>忙总，这样你就有一个新职业，可以做有机食品鉴定师，专门查防腐剂，一抓一个准！<img src="http://www.fengyanforum.org/forum/images/smilies/lol.gif" style="vertical-align: middle;" border="0" alt="lol" title="lol" /></blockquote>
+
+			
+			
+			
+			
+				
+    <div class="TIME">2011-12-10 15:05:00 回复</div>
+    </div>
+    </div>
+    <div class="LI">
+    <div class="USER"><span class="NAME" id=2011121020430020111211125500>晨池</span>
+    <div class="TIME">2011-12-10 20:43:00</div></div>
+    <div class="SAY">罪过罪过，抱歉抱歉！真没想到这么严重，忙总您好好保养，祝您身体越来越好！<br />
+<br />
+<blockquote><cite><span> (12-10-2011 03:05 PM)</span>wxmang 提到: <a href="http://www.fengyanforum.org/forum/post-44688.html#pid44688" class="quick_jump">_</a></cite>你这是想谋杀我？每一次试探都是在玩命。谁知道他们加的是什么玩意。<br />
+<br />
+<img src="http://www.fengyanforum.org/forum/images/smilies/laughing.gif" style="vertical-align: middle;" border="0" alt="捂嘴笑" title="捂嘴笑" /><img src="http://www.fengyanforum.org/forum/images/smilies/daxiao.gif" style="vertical-align: middle;" border="0" alt="大笑" title="大笑" /><img src="http://www.fengyanforum.org/forum/images/smilies/lol.gif" style="vertical-align: middle;" border="0" alt="lol" title="lol" /></blockquote>
+
+			
+			
+			
+			
+				</div>
+    <div class="REPLY">开玩笑，不必在意，其实现在很多小企业是什么玩意都敢往里加，我认识一个大连锁超市老板，他的说法就是：只有你不敢想的，没有他不敢做的。<br />
+<br />
+<br />
+<img src="http://www.fengyanforum.org/forum/images/smilies/laughing.gif" style="vertical-align: middle;" border="0" alt="捂嘴笑" title="捂嘴笑" /><img src="http://www.fengyanforum.org/forum/images/smilies/daxiao.gif" style="vertical-align: middle;" border="0" alt="大笑" title="大笑" /><img src="http://www.fengyanforum.org/forum/images/smilies/lol.gif" style="vertical-align: middle;" border="0" alt="lol" title="lol" /><br />
+<br />
+<br />
+<br />
+<blockquote><cite><span> (12-10-2011 08:43 PM)</span>晨池 提到: <a href="http://www.fengyanforum.org/forum/post-44764.html#pid44764" class="quick_jump">_</a></cite>罪过罪过，抱歉抱歉！真没想到这么严重，忙总您好好保养，祝您身体越来越好！</blockquote>
+
+			
+			
+			
+			
+				
+    <div class="TIME">2011-12-11 12:55:00 回复</div>
+    </div>
+    </div>
+    <div class="LI">
+    <div class="USER"><span class="NAME" id=2011121201460020111212111000>流江河</span>
+    <div class="TIME">2011-12-12 01:46:00</div></div>
+    <div class="SAY">有个问题？你以后用的时候，每次打开后，空气还是会进去啊？<br />
+<br />
+<blockquote><cite><span> (12-08-2011 10:33 AM)</span>wxmang 提到: <a href="http://www.fengyanforum.org/forum/post-44202.html#pid44202" class="quick_jump">_</a></cite>这是祖传的，据我婆婆说的，她一直用这种方法做各种食品保鲜，包括西红柿酱，果酱，酸辣椒酱等等。<br />
+<br />
+<img src="http://www.fengyanforum.org/forum/images/smilies/laughing.gif" style="vertical-align: middle;" border="0" alt="捂嘴笑" title="捂嘴笑" /><img src="http://www.fengyanforum.org/forum/images/smilies/daxiao.gif" style="vertical-align: middle;" border="0" alt="大笑" title="大笑" /><img src="http://www.fengyanforum.org/forum/images/smilies/lol.gif" style="vertical-align: middle;" border="0" alt="lol" title="lol" /></blockquote>
+
+			
+			
+			
+			
+				</div>
+    <div class="REPLY">打开后，一般两三天就全部消灭掉了。两三天不至于变质。<br />
+<br />
+<img src="http://www.fengyanforum.org/forum/images/smilies/laughing.gif" style="vertical-align: middle;" border="0" alt="捂嘴笑" title="捂嘴笑" /><img src="http://www.fengyanforum.org/forum/images/smilies/daxiao.gif" style="vertical-align: middle;" border="0" alt="大笑" title="大笑" /><img src="http://www.fengyanforum.org/forum/images/smilies/lol.gif" style="vertical-align: middle;" border="0" alt="lol" title="lol" /><br />
+<br />
+<br />
+<br />
+<br />
+<blockquote><cite><span> (12-12-2011 01:46 AM)</span>流江河 提到: <a href="http://www.fengyanforum.org/forum/post-45029.html#pid45029" class="quick_jump">_</a></cite>有个问题？你以后用的时候，每次打开后，空气还是会进去啊？</blockquote>
+
+			
+			
+			
+			
+				
+    <div class="TIME">2011-12-12 11:10:00 回复</div>
+    </div>
+    </div>
+    </div>
+    </div>
+    <div class="BACK"><a href="../index.html">返回索引页</a></div>
+    </body></html>

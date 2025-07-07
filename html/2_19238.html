@@ -1,0 +1,76 @@
+<!DOCTYPE html><html><head>    
+    <meta content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no" name=viewport><meta charset=utf-8>
+    <script src="jquery-1.11.3.min.js"></script>
+    <link href="fSelect.css" rel="stylesheet" type="text/css">
+    <script src="supabase.js"></script>
+    <script src="tag.js"></script>
+    <link rel="stylesheet" href="./init.css">
+    <title>树状目录改进的第一步，在帖子上部也显示树状目录</title>
+    </head>
+    <body><div class="BODY">
+    <div class="BACK"><a href="../index.html">返回索引页</a></div>
+    <h1>树状目录改进的第一步，在帖子上部也显示树状目录</h1>
+    <p class="author">瓦斯</p>
+    <p class="DATE">2011-07-20 22:30:00</p>
+    <br><br>
+    <div class="POST">树状目录显示方式比之平板显示方式，读者可以有针对性地选择性特定发帖人的帖子阅读。目前mybb的默认方式是平板显示，也就是不管3721你全部要读一遍。如果能够像资源管理器那样，把树状目录显示在左边，把帖子内容显示在右边，那么这个论坛就会比较方便了。<br />
+<br />
+对mybb做一些的研究，注意到论坛的显示都是按照模块式集成的。这也就给我们改进提供了方便。我话了一些时间来寻找那个树状目录的显示模块，也就是那个“这个主题的帖子​”下的所有树状目录，到底是在哪里控制显示的。<br />
+<br />
+现已查明，树状目录的显示只是用一个{&#36;threadexbox}就可以显示了，把这个命令插在哪里，哪里就会显示出该帖的树状目录。现有的树状显示方式中树状目录是放在帖子底部的，给浏览点击带来不方​便。为了证实这个{&#36;threadexbox}有用，我想在帖子顶部也同时显示一个树状目录（底部原有的树状目录暂时不删掉）。<br />
+<br />
+在后台的模板showthread中，第15行插入一行{&#36;threadexbox}（可以从原版的第57行复制）：<br />
+<!-- start: postbit_attachments_images_image -->
+<img src="attachment.php?aid=1800" class="attachment" alt="" />___
+<!-- end: postbit_attachments_images_image -->
+保存之后，就可以在前台的树状展开中看到如下的效果：<br />
+<!-- start: postbit_attachments_images_image -->
+<img src="attachment.php?aid=1801" class="attachment" alt="" />___
+<!-- end: postbit_attachments_images_image -->
+<br />
+在树状显示的情况下，回复帖子之后，默认会回到平板模式，需要再次选择树状显示才能出现树状目录。<br />
+<br />
+我想，当我们对mybb的结构进一步了解之后，可以把树状目录移到左边，底部的树状目录删掉。最后就是把默认显示方式改成树状显示。当树状目录成为主流之后，就要设法强制​填写回帖标题，不要自动的“RE：上一个标题”。
+			
+			
+			
+			
+				<!-- start: postbit_editedby -->
+<span class="smalltext">(这个帖子最后修改于: 07-22-2011 05:51 PM by <a href="http://www.fengyanforum.org/forum/user-41.html">瓦斯</a>.)</span>
+
+
+<!-- end: postbit_editedby --></div>
+    <div class="REPLY_LI">
+    <h2>1 条留言</h2>
+    <div class="LI">
+    <div class="USER"><span class="NAME" id=1900010100000020110721214000></span>
+    <div class="TIME">1900-01-01 00:00:00</div></div>
+    <div class="SAY"></div>
+    <div class="REPLY"><blockquote><cite><span> (07-20-2011 10:30 PM)</span>瓦斯 提到: <a href="http://www.fengyanforum.org/forum/post-19238.html#pid19238" class="quick_jump">_</a></cite>树状目录显示方式比之平板显示方式，读者可以有针对性地选择性特定发帖人的帖子阅读。目前mybb的默认方式是平板显示，也就是不管3721你全部要读一遍。如果能够像资源管理器那样，把树状目录显示在左边，把帖子内容显示在右边，那么这个论坛就会比较方便了。<br />
+<br />
+对mybb做一些的研究，注意到论坛的显示都是按照模块式集成的。这也就给我们改进提供了方便。我话了一些时间来寻找那个树状目录的显示模块，也就是那个“这个主题的帖子​”下的所有树状目录，到底是在哪里控制显示的。<br />
+<br />
+现已查明，树状目录的显示只是用一个{&#36;threadexbox}就可以显示了，把这个命令插在哪里，哪里就会显示出该帖的树状目录。现有的树状显示方式中树状目录是放在帖子底部的，给浏览点击带来不方​便。为了证实这个{&#36;threadexbox}有用，我想在帖子顶部也同时显示一个树状目录（底部原有的树状目录暂时不删掉）。<br />
+<br />
+在后台的模板showthread中，第15行插入一行{&#36;threadexbox}（可以从第56行复制）：<br />
+
+保存之后，就可以在前台的树状展开中看到如下的效果：<br />
+
+<br />
+在树状显示的情况下，回复帖子之后，默认会回到平板模式，需要再次选择树状显示才能出现树状目录。<br />
+<br />
+我想，当我们对mybb的结构进一步了解之后，可以把树状目录移到左边，底部的树状目录删掉。最后就是把默认显示方式改成树状显示。当树状目录成为主流之后，就要设法强制​填写回帖标题，不要自动的“RE：上一个标题”。</blockquote>
+<br />
+这个是个好创意，目前的格式太不方便了，老是好像在找宝藏一样，一遍遍的搜寻，效率太低。如果能够按照瓦斯的建议改过来最好了。
+			
+			
+			
+			
+				
+    <div class="TIME">2011-07-21 21:40:00 回复</div>
+    </div>
+    </div>
+    </div>
+    </div>
+    <div class="BACK"><a href="../index.html">返回索引页</a></div>
+    </body></html>

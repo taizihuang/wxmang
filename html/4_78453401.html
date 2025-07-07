@@ -1,0 +1,382 @@
+<!DOCTYPE html><html><head>    
+    <meta content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no" name=viewport><meta charset=utf-8>
+    <script src="jquery-1.11.3.min.js"></script>
+    <link href="fSelect.css" rel="stylesheet" type="text/css">
+    <script src="supabase.js"></script>
+    <script src="tag.js"></script>
+    <link rel="stylesheet" href="./init.css">
+    <title>给大家汇报一些数据</title>
+    </head>
+    <body><div class="BODY">
+    <div class="BACK"><a href="../index.html">返回索引页</a></div>
+    <h1>给大家汇报一些数据</h1>
+    <p class="author">青春的学院路</p>
+    <p class="DATE">2015-08-10 11:02:32</p>
+    <br><br>
+    <div class="POST">删除了<br/><br/>    <br/><br/><br/><br/><br/><br/>       </div>
+    <div class="REPLY_LI">
+    <h2>45 条留言</h2>
+    <div class="LI">
+    <div class="USER"><span class="NAME" id=1900010100000020150810112534></span>
+    <div class="TIME">1900-01-01 00:00:00</div></div>
+    <div class="SAY"></div>
+    <div class="REPLY">实际情况比你这个严重，东北三省的财政收入全部是负增长，辽宁甚至负增长到20%以上。
+    <div class="TIME">2015-08-10 11:25:34 回复</div>
+    </div>
+    </div>
+    <div class="LI">
+    <div class="USER"><span class="NAME" id=2015081011333520150810113842>青春的学院路</span>
+    <div class="TIME">2015-08-10 11:33:35</div></div>
+    <div class="SAY">请问芒总，现在经济有触底的迹象吗？还是继续在向下探底？</div>
+    <div class="REPLY">我个人觉得什么时候去库存完成，什么时候到底，目前库存还很大。
+    <div class="TIME">2015-08-10 11:38:42 回复</div>
+    </div>
+    </div>
+    <div class="LI">
+    <div class="USER"><span class="NAME" id=2015081011360120150810114220>青春的学院路</span>
+    <div class="TIME">2015-08-10 11:36:01</div></div>
+    <div class="SAY">另外就是，最近经常到长春出差，为什么飞机里还是满满的？在机场看到乌泱乌泱的人群，瞬间对经济又有信心了，这个怎么解释呢？<br/>另外京广线的高铁，几乎也是满满的人啊。</div>
+    <div class="REPLY">我们看经济，一般不看客流，因为到处推销库存产品，到处要应收账那款，也能带来客流，但是那是代表经济下行的客流。<br/><br/>看宏观经济，主要看铁路货运量，用电量和银行贷款到实体企业增加值（绝对值无意义，因为大量借新还旧，借债活命的企业，本身并不生产，只是苟延残喘而已）这三个数据，只要判断三个数据即可，因为这三个数据不太好造假。
+    <div class="TIME">2015-08-10 11:42:20 回复</div>
+    </div>
+    </div>
+    <div class="LI">
+    <div class="USER"><span class="NAME" id=2015081013253220150811170724>黑匣子</span>
+    <div class="TIME">2015-08-10 13:25:32</div></div>
+    <div class="SAY">芒总提的这个是“克强指数”吧，看来这三个指标还是很硬的</div>
+    <div class="REPLY">这个指数可不是他发明的，大概在９０年代初，国家计委就用这些参数估计全国生产经营情况了。
+    <div class="TIME">2015-08-11 17:07:24 回复</div>
+    </div>
+    </div>
+    <div class="LI">
+    <div class="USER"><span class="NAME" id=2015081018442020150811165508>香辣蟹</span>
+    <div class="TIME">2015-08-10 18:44:20</div></div>
+    <div class="SAY">忙叔，记得你说过用电量会造假呢，一是大量的小水电不上网直接放掉了，二是提前交下一年电费</div>
+    <div class="REPLY">单独写一帖《独立地方电网》。
+    <div class="TIME">2015-08-11 16:55:08 回复</div>
+    </div>
+    </div>
+    <div class="LI">
+    <div class="USER"><span class="NAME" id=2015081022212720150811165804>nt4587</span>
+    <div class="TIME">2015-08-10 22:21:27</div></div>
+    <div class="SAY">辽宁这个情况我知道一些，基本原因就是陈政高做假数据，他调走之后来的李希不认前面的做法，实际上增长很低，不过应该没有表面数据那么夸张。</div>
+    <div class="REPLY">我知道的财政负增长数据，是他们财政部门人自己说的，应该不会说谎，因为辽宁人历来很骄傲，很在乎面子的。
+    <div class="TIME">2015-08-11 16:58:04 回复</div>
+    </div>
+    </div>
+    <div class="LI">
+    <div class="USER"><span class="NAME" id=2015081110443620150811165326>ynkane</span>
+    <div class="TIME">2015-08-11 10:44:36</div></div>
+    <div class="SAY">忙总，您说的库存是房地产库存，还是泛指呢？</div>
+    <div class="REPLY">产品库存，主要是钢铁，建材，水泥，机电，化工等等重工业和化工产品。不是房地产，房地产是滞后指标。
+    <div class="TIME">2015-08-11 16:53:26 回复</div>
+    </div>
+    </div>
+    <div class="LI">
+    <div class="USER"><span class="NAME" id=2015081112243420150811164816>弈理指归</span>
+    <div class="TIME">2015-08-11 12:24:34</div></div>
+    <div class="SAY">我记得忙总之前有说过，用电量也不太准确，因为购电量的可能预购买，为了打折。发电量会发完放掉，比如贵州的小水电。忙总能否再解释一下~~</div>
+    <div class="REPLY">我单独写一帖《地方独立电网》。
+    <div class="TIME">2015-08-11 16:48:16 回复</div>
+    </div>
+    </div>
+    <div class="LI">
+    <div class="USER"><span class="NAME" id=2015081115435620150811164934>齐的隆冬强</span>
+    <div class="TIME">2015-08-11 15:43:56</div></div>
+    <div class="SAY">那我多问一句，别的能造假，财政收入也能吗？财政部们的官员就不怕对不上账，</div>
+    <div class="REPLY">可以，寅吃卯粮，我就在东北接管的企业经历过被预征税款（前一年底把来年税预征了）。
+    <div class="TIME">2015-08-11 16:49:34 回复</div>
+    </div>
+    </div>
+    <div class="LI">
+    <div class="USER"><span class="NAME" id=2015081116575020150811171722>霍牛</span>
+    <div class="TIME">2015-08-11 16:57:50</div></div>
+    <div class="SAY">我所在的企业就是山西的地方电网公司办的，托前几年煤炭行业红火的福，山西的地方电力公司的电网部分前几年日子很是滋润。</div>
+    <div class="REPLY">火电现在也进入低谷期，要熬几年了。
+    <div class="TIME">2015-08-11 17:17:22 回复</div>
+    </div>
+    </div>
+    <div class="LI">
+    <div class="USER"><span class="NAME" id=2015081117033320150811171526>派星大大</span>
+    <div class="TIME">2015-08-11 17:03:33</div></div>
+    <div class="SAY">谢谢忙总回复，我们领导是哈工大一个在热泵行业很有威望的老教授的女婿，搞技术出身(可以想象国营厂的技术领导)，对人很严格(领导面前要站着汇报工作，提前做准备)，但是又左右逢源的那种人</div>
+    <div class="REPLY">这种搞销售，难度很大，因为销售本是服务，如果能看长期提供稳定服务，不辞辛劳，百问不厌，这样的销售才会成为好销售。我是一个好销售，我经常能看从销售变成人家朋友，最后变成人家管理顾问，甚至当过人家投资项目评估的负责人。我的诀窍就是服务至上，将心比心，我想要销售为我做什么，我就为客户做什么。
+    <div class="TIME">2015-08-11 17:15:26 回复</div>
+    </div>
+    </div>
+    <div class="LI">
+    <div class="USER"><span class="NAME" id=2015081117223520150811173138>派星大大</span>
+    <div class="TIME">2015-08-11 17:22:35</div></div>
+    <div class="SAY">我理解的销售就是交朋友，互相创造价值，我能够跟很多年纪跟我爸差不多岁数的老前辈交上知心的朋友，但也还会讲究分寸。<br/>看了您的很多书，特别是制造业企业管理方面，相信是我以后的发展方向，我现在21岁，大专学历，现在在这边的设备厂镀金锻炼本领，以后学历考上去了可以去外企也可以进我们院（铁科院）的下属铁路牵引制动模块生产厂，感觉很多人起步就比我高，但我就是不信这个邪</div>
+    <div class="REPLY">英雄不问出生，看真本事，尤其是销售行业，学位反而是负担，豁不出去，害羞，怕丢面子。<br/><br/>我就有这个问题，为此，我９０年代中期专门在杭州火车站门口以火车票丢了要过钱，在厦门宾馆旁边的饭馆要过水饺。放不下面子，这辈子都无法搞销售，也无法搞管理。<br/><br/>其实这个放下面子，说起来简单，做起来极难，尤其是我这种人，不过总算突破心魔了。<br/><br/>其实突破了也就无所谓了。百无一用是书生，书生就是面子观害人。
+    <div class="TIME">2015-08-11 17:31:38 回复</div>
+    </div>
+    </div>
+    <div class="LI">
+    <div class="USER"><span class="NAME" id=2015081117412120150811175051>派星大大</span>
+    <div class="TIME">2015-08-11 17:41:21</div></div>
+    <div class="SAY">出身确实能说明一部分问题，但后天的努力和悟性往往能够弥补一部分出身的弱势，我很早就独立出来，大学的时候开始跟着当时做市政工程的老板们在一起吃喝玩乐，言传身教的社会知识，家里教不了我，而我总感觉初入社会，因为身边人的层次和水平并不高，所以出身方面还是很重要的，但是随着我们一步步的成长，取而代之的也是自身价值，或者社会背景，这些才是后天决定，但如何能够达到一定的社会地位，是慧是悟性，不知道说的对不对</div>
+    <div class="REPLY">慢慢来，不急不贪不忿，事缓则圆，不要梦想一口吃个胖子。
+    <div class="TIME">2015-08-11 17:50:51 回复</div>
+    </div>
+    </div>
+    <div class="LI">
+    <div class="USER"><span class="NAME" id=2015081117433120150811175253>齐的隆冬强</span>
+    <div class="TIME">2015-08-11 17:43:31</div></div>
+    <div class="SAY">忙总的意思是不是想说突破了以后，才发现自己以前因为面子错过了太多的机会</div>
+    <div class="REPLY">不是，因为有的工作，例如管理工作，就是要跟各种人打交道，甚至三教九流，地痞流氓，三山五岳的人，自我清高，珍惜羽毛，都无法干这种工作。
+    <div class="TIME">2015-08-11 17:52:53 回复</div>
+    </div>
+    </div>
+    <div class="LI">
+    <div class="USER"><span class="NAME" id=2015081118043220150811181726>ludwigwa</span>
+    <div class="TIME">2015-08-11 18:04:32</div></div>
+    <div class="SAY">忙总，我觉得自己面对陌生人已经没什么面子观了，但对于同事领导，特别是还有相亲的时候总是摆脱不了。这个怎么改呢？</div>
+    <div class="REPLY">不是面子观，是一种人生态度，太在意自己在别人眼里的形象，就会缩手缩脚，刻意塑造自己成为别人眼中的成功人士或高大上人士，就不真实了，不真实的人生，是比较痛苦的，因为无时无刻不再装，装久了，人就变态了。
+    <div class="TIME">2015-08-11 18:17:26 回复</div>
+    </div>
+    </div>
+    <div class="LI">
+    <div class="USER"><span class="NAME" id=2015081118234720150811182610>ludwigwa</span>
+    <div class="TIME">2015-08-11 18:23:47</div></div>
+    <div class="SAY">我其实是对工作不满意，觉得不合适，在犹豫要不要辞职。相亲的话，我的志趣是是比较不合世俗潮流的，所以也不知道该怎么说。自己内心很孤单，没多少知心朋友。我只是不想有意无意成为别人眼中一个奇怪的人。</div>
+    <div class="REPLY">你管人家怎么看？人家看你顺眼是给你老婆还是给你钱？<br/><br/>在乎别人怎么看的人，性格是懦弱而胆怯的。有时人生发生转折，不过就是豁出去几次而已。
+    <div class="TIME">2015-08-11 18:26:10 回复</div>
+    </div>
+    </div>
+    <div class="LI">
+    <div class="USER"><span class="NAME" id=2015081118582620150812091000>卡冈诺维奇</span>
+    <div class="TIME">2015-08-11 18:58:26</div></div>
+    <div class="SAY">忙总，你可真豁得出去。好奇，想问结果如何？被拒甚至受辱后，如何调整自己的心态？</div>
+    <div class="REPLY">咬牙坚持，坚持就是胜利。脸红筋涨当然是不可避免的。
+    <div class="TIME">2015-08-12 09:10:00 回复</div>
+    </div>
+    </div>
+    <div class="LI">
+    <div class="USER"><span class="NAME" id=2015081121463320150812085118>leerzv</span>
+    <div class="TIME">2015-08-11 21:46:33</div></div>
+    <div class="SAY">不塑造自己成为领导严重成熟部下，可不好往上升迁哦。一不对领导胃口，一句不够成熟呛死人…</div>
+    <div class="REPLY">成熟不是装出来的，成熟不成熟，在老江湖眼睛里一目了然，其实有的人了不说话，我看一眼就知道他有几根葱，装是没有用的。
+    <div class="TIME">2015-08-12 08:51:18 回复</div>
+    </div>
+    </div>
+    <div class="LI">
+    <div class="USER"><span class="NAME" id=2015081208340220150812084942>maria_yes</span>
+    <div class="TIME">2015-08-12 08:34:02</div></div>
+    <div class="SAY">是不是因为服务业上去了？<br/>而服务业消耗电量，货运等等不大</div>
+    <div class="REPLY">局部地区有可能，但是全国不可能，因为服务业是寄生产业，一定是先有制造业的增长，才有服务业增长的需求，不能皮子还没有长出来，先长毛吧？
+    <div class="TIME">2015-08-12 08:49:42 回复</div>
+    </div>
+    </div>
+    <div class="LI">
+    <div class="USER"><span class="NAME" id=2015081209164020150812101254>leerzv</span>
+    <div class="TIME">2015-08-12 09:16:40</div></div>
+    <div class="SAY">人民币贬值，第三季度出口数据会好一些了吧？</div>
+    <div class="REPLY">会好一些，不过幅度不会很大，因为外部需求仍然疲弱。
+    <div class="TIME">2015-08-12 10:12:54 回复</div>
+    </div>
+    </div>
+    <div class="LI">
+    <div class="USER"><span class="NAME" id=2015081209534720150812101031>一休哥们儿</span>
+    <div class="TIME">2015-08-12 09:53:47</div></div>
+    <div class="SAY">请教忙总，铁路货运量、用电量和银行贷款到实体企业增加值这三个数据在哪儿可以查得到？</div>
+    <div class="REPLY">前两个数据国家统计局定期公布，可以上国家统计局网站查，后一个数据，央行定期公布，可以去央行网站查。详细分类数据要收费，大路货数据免费。
+    <div class="TIME">2015-08-12 10:10:31 回复</div>
+    </div>
+    </div>
+    <div class="LI">
+    <div class="USER"><span class="NAME" id=2015081210420220150812105024>maria_yes</span>
+    <div class="TIME">2015-08-12 10:42:02</div></div>
+    <div class="SAY">因为中国的服务业长期没有跟上制造业吧？<br/>很多落后国家的服务业占GDP比重都远比中国高</div>
+    <div class="REPLY">是统计口径问题，中国很多服务业数据不列入统计，原因是采集数据成本太高，不值得，再说采集这种数据，地方更容易造假，因为很难核实，或者核实成本太高，得不偿失，所以干脆不统计，其实我们服务业数据大概要比统计数据翻一翻不止。这个国家统计局有个研究成果。
+    <div class="TIME">2015-08-12 10:50:24 回复</div>
+    </div>
+    </div>
+    <div class="LI">
+    <div class="USER"><span class="NAME" id=2015081210494520150812105126>一休哥们儿</span>
+    <div class="TIME">2015-08-12 10:49:45</div></div>
+    <div class="SAY">统计局网站上有货运总量（铁路+公路+水运+民航）和铁路货运量，这两个指标哪个更能反映宏观经济的情况</div>
+    <div class="REPLY">铁路货运量，因为制造业的大宗原材物料全部走铁路，公路消费品比较多，是滞后指标。
+    <div class="TIME">2015-08-12 10:51:26 回复</div>
+    </div>
+    </div>
+    <div class="LI">
+    <div class="USER"><span class="NAME" id=2015081211350120150812122215>maria_yes</span>
+    <div class="TIME">2015-08-12 11:35:01</div></div>
+    <div class="SAY">我是感觉这几年服务业消费力和生产力突飞猛进<br/>譬如影视行业（电视剧，综艺，电影大爆发），演唱会，<br/>IT互联网行业也如火如荼，旅游也火爆了起来<br/><br/>当然我也只是一种想法，不知道正误：-）</div>
+    <div class="REPLY">不过与金融业、房地产业，尤其是商业地产服务业增加值相比，还是小儿科。这两块增长单位都是万亿人民币起。
+    <div class="TIME">2015-08-12 12:22:15 回复</div>
+    </div>
+    </div>
+    <div class="LI">
+    <div class="USER"><span class="NAME" id=2015081213375320150813125245>bcpu215</span>
+    <div class="TIME">2015-08-12 13:37:53</div></div>
+    <div class="SAY">面子的障碍或许可以克服，但是在关乎企业生存的重要业务上，如何处理陪关键人物喝花酒、送高值回扣等等这些法律边缘的攻关？</div>
+    <div class="REPLY">一般情况我遇到这种情况极少，因为我自己不喝酒，不去娱乐场所，也不收回扣，也不行贿受贿，所以一般遇到的企业很少对我提出这种要求（即使有，也是对下面的采购部门或销售部门），对民营企业，我们做法是在价格或结算时间上让利，不给好处，因为我是国有企业，无法走账；对国有企业，真有要好处的，做好记录，做好录音。一般人其实知道我能把企业收受回扣的采购部门负责人，销售部门负责人送进监狱后，都不会不开眼找我要什么东西。<br/><br/>至于吃饭喝酒，企业有宾馆。<br/><br/>当然我这种情况很特殊，是国企，而且谁也不怕。
+    <div class="TIME">2015-08-13 12:52:45 回复</div>
+    </div>
+    </div>
+    <div class="LI">
+    <div class="USER"><span class="NAME" id=2015081214063620150813124742>青芝坞</span>
+    <div class="TIME">2015-08-12 14:06:36</div></div>
+    <div class="SAY">难说能有改观。石油和大宗原料价格被压得很低了，降低了不少国家的支付能力，没钱进口更多中国商品。还有分析认为这次加息可能引发新兴市场的债务偿付危机，那样的话也没神马闲钱了。彭博报道沙特这样的国家才2个月就烧了360亿，差不多5%的外汇储备，也算破了纪录。</div>
+    <div class="REPLY">可以挤压东南亚生存空间，为我们打入提供机会。
+    <div class="TIME">2015-08-13 12:47:42 回复</div>
+    </div>
+    </div>
+    <div class="LI">
+    <div class="USER"><span class="NAME" id=2015081216133720150813123948>悠悠的风</span>
+    <div class="TIME">2015-08-12 16:13:37</div></div>
+    <div class="SAY">会开启贬值通道么？对国内的经济影响有哪些？在网上找了好久，除了官方的解答，没见到几个分析，反之其他国家，比如越南，跟进的比较快。不知道是否这次贬值象官方宣称的那样，不会有贬值预期。<br/><br/>问题有点大，无法简略回答就算了。</div>
+    <div class="REPLY">不会让贬值预期投机机会出现的，采用突击方式，几次就搞定。<br/><br/>主要还是与美国讨价还价需要，9月份见面要劫材。
+    <div class="TIME">2015-08-13 12:39:48 回复</div>
+    </div>
+    </div>
+    <div class="LI">
+    <div class="USER"><span class="NAME" id=2015081312551120150813130252>nt4587</span>
+    <div class="TIME">2015-08-13 12:55:11</div></div>
+    <div class="SAY">又一个98年？</div>
+    <div class="REPLY">整体上应该比98年严峻，因为国际经济两个最大发动机中美都没恢复状态，日本正在走向深渊，欧盟在烂泥潭不能自拔。
+    <div class="TIME">2015-08-13 13:02:52 回复</div>
+    </div>
+    </div>
+    <div class="LI">
+    <div class="USER"><span class="NAME" id=2015081313285720150813141925>神京大头Panda</span>
+    <div class="TIME">2015-08-13 13:28:57</div></div>
+    <div class="SAY">忙总对央行首席经济学家马俊的评价是怎样的？以前经常看他在德意志银行就职时写的关于中国经济的研究报告，那是后就感觉他是一个知道什么该说，什么不该说的人，和中央的意志保持一致。后来听到他被央行任命为首席经济学家时非常诧异，他是在我印象里第一个从外资银行华丽转身加入到要害部门的人，非常不简单。</div>
+    <div class="REPLY">不了解这个人，也不认识。
+    <div class="TIME">2015-08-13 14:19:25 回复</div>
+    </div>
+    </div>
+    <div class="LI">
+    <div class="USER"><span class="NAME" id=2015081314463520150813145159>神京大头Panda</span>
+    <div class="TIME">2015-08-13 14:46:35</div></div>
+    <div class="SAY">多谢忙总回复！还有一个问题想向您请教：因为经济大环境不好，中央已经重新启动大规模的基建投资计划。到7月底，铁路，公共设施以及道路固定资产投资等同比增幅大多在15-25%左右。但是我非常怀疑这样的增幅是否是可持续的，尤其是现在地方政府资金捉襟见肘，1.1万地方债置换的前景有待观察。再这样的情况下，以中交建及中国建筑国际为首的重型基建公司依然再做很多BOT，BT，PPP等项目。您觉得未来这些项目的流动性风险如何？地方政府关门打狗，工程款收不回来的风险系数是否会越来越大？</div>
+    <div class="REPLY">很可能搞成90年代中期全国三角债泛滥，最后中央出钱收拾残局，失败后直接导致老朱启动第一次国企关停并转，3000万国企人员大下岗。其实我们已经做好第二次关停并转的准备了，我的口号是救亡图存。<br/><br/>我是20年内碰到两次大规模关停并转，真是五味杂陈。
+    <div class="TIME">2015-08-13 14:51:59 回复</div>
+    </div>
+    </div>
+    <div class="LI">
+    <div class="USER"><span class="NAME" id=2015081317064120150814101353>齐的隆冬强</span>
+    <div class="TIME">2015-08-13 17:06:41</div></div>
+    <div class="SAY">忙总关停转并这活除了朱相别能能干成吗？我以前一直以为只有朱相这样的才行</div>
+    <div class="REPLY">这个关停并转是技术活，只要有政策（例如停息挂账，例如买断工龄），谁都能够干。最近二重就搞得如火如荼的。
+    <div class="TIME">2015-08-14 10:13:53 回复</div>
+    </div>
+    </div>
+    <div class="LI">
+    <div class="USER"><span class="NAME" id=2015081319364220150814101841>香辣蟹</span>
+    <div class="TIME">2015-08-13 19:36:42</div></div>
+    <div class="SAY">上次关停并转的原因不是大锅饭导致国企没有竞争力吗？这次再次关停并转说明经历了这么多改革，国企还是没有竞争力？</div>
+    <div class="REPLY">这次不是竞争力问题，是产能严重过剩问题，钢铁、水泥、玻璃、电解铝、煤炭不但严重耗能，也污染环境，而且产能过剩到按照目前增长速度，十年都无法消化。
+    <div class="TIME">2015-08-14 10:18:41 回复</div>
+    </div>
+    </div>
+    <div class="LI">
+    <div class="USER"><span class="NAME" id=2015081320440520150814101944>夜半人语</span>
+    <div class="TIME">2015-08-13 20:44:05</div></div>
+    <div class="SAY">我觉得不是没有竞争力，而是企业领导太多判断失误，以及种种原因造成过多的无谓损失，浪费了太多资源，资源配置无效率或低效率。</div>
+    <div class="REPLY">不是判断失误，是诸侯经济，囚徒困境，谁不扩大产能，谁吃亏，结果最后大家都吃亏。
+    <div class="TIME">2015-08-14 10:19:44 回复</div>
+    </div>
+    </div>
+    <div class="LI">
+    <div class="USER"><span class="NAME" id=2015081322123720150814101445>Hans</span>
+    <div class="TIME">2015-08-13 22:12:37</div></div>
+    <div class="SAY">这一次国企有大规模经营不善吗，关停并转那些国企呢？</div>
+    <div class="REPLY">产能严重过剩企业，例如钢铁、水泥、玻璃、电解铝、煤炭等等。
+    <div class="TIME">2015-08-14 10:14:45 回复</div>
+    </div>
+    </div>
+    <div class="LI">
+    <div class="USER"><span class="NAME" id=2015081322330220150814101538>豆豆瓣瓣</span>
+    <div class="TIME">2015-08-13 22:33:02</div></div>
+    <div class="SAY">忙总的意思是同样的错误，庙堂上的人犯了两次？而且距离这么近，是吗？</div>
+    <div class="REPLY">十年不作为，导致地方做大，产能无限制增长，产业结构错过最佳调整时间了。
+    <div class="TIME">2015-08-14 10:15:38 回复</div>
+    </div>
+    </div>
+    <div class="LI">
+    <div class="USER"><span class="NAME" id=2015081322592120150814102329>morningtiger</span>
+    <div class="TIME">2015-08-13 22:59:21</div></div>
+    <div class="SAY">这次更惨烈吧</div>
+    <div class="REPLY">看行业，过剩不严重的行业应该问题不大，现在准备处理的都是产能过剩的。
+    <div class="TIME">2015-08-14 10:23:29 回复</div>
+    </div>
+    </div>
+    <div class="LI">
+    <div class="USER"><span class="NAME" id=2015081412054220150817112827>罗阿宝</span>
+    <div class="TIME">2015-08-14 12:05:42</div></div>
+    <div class="SAY">忙总，您能详细说说“我９０年代中期专门在杭州火车站门口以火车票丢了要过钱，在厦门宾馆旁边的饭馆要过水饺。”的这段经历吗？我感觉自己最近脸皮越来越厚，似乎进入死猪不怕开水烫阶段，想对比下看看，和您的心路旅程是不是一样的，还有哪些要改进 :D</div>
+    <div class="REPLY">我不是去训练自己脸皮厚，其实现在我的脸皮也不厚，我是去训练怎么样不在乎别人的看法。<br/><br/>有时我们以为知道别人的看法，然后反馈到自己行动上，或者脸发烧，或者畏首畏尾。其实这就是自己给自己设置的牢笼。<br/><br/>其实真相是别人根本没看法，别人真不在乎你在做什么
+    <div class="TIME">2015-08-17 11:28:27 回复</div>
+    </div>
+    </div>
+    <div class="LI">
+    <div class="USER"><span class="NAME" id=2015081722312620150818122625>晨池</span>
+    <div class="TIME">2015-08-17 22:31:26</div></div>
+    <div class="SAY">我也有类似的感觉，不过不是有意训练的。小时候很在乎别人的看法，后来突然发现，自己的事情往往只有自己才最清楚也只有自己才会记住，别人很快就忘了。我很在意甚至感到很窘迫的事情，其实别人根本没有发现，即使发现了很快也就忘了<br/>从那以后我就经常这样安慰自己不用太在意别人会如何——除非人家明确说了出来</div>
+    <div class="REPLY">最佳办法是把别人对自己评价或看法当成对第三者的评价，客观判断，免得代入感太强失误。
+    <div class="TIME">2015-08-18 12:26:25 回复</div>
+    </div>
+    </div>
+    <div class="LI">
+    <div class="USER"><span class="NAME" id=2015081722340020150818122511>morningtiger</span>
+    <div class="TIME">2015-08-17 22:34:00</div></div>
+    <div class="SAY">最近到增速最快的地方，发现非常不好</div>
+    <div class="REPLY">本来就是媒体虾扯蛋的结果，很多老百姓还真当真了，天下哪有这么便宜的事情，到处都下雨，凭什么你那里总出太阳？再说产业链和供应链互相传染，哪有净土？下游都没了，上游还能如火如荼？
+    <div class="TIME">2015-08-18 12:25:11 回复</div>
+    </div>
+    </div>
+    <div class="LI">
+    <div class="USER"><span class="NAME" id=2015081723064220150818122230>嘿嘿哈</span>
+    <div class="TIME">2015-08-17 23:06:42</div></div>
+    <div class="SAY">是的，好多火电没法发电，都停着，还有直接将额度卖给水电的。北方更是，核电都没法满功率发。</div>
+    <div class="REPLY">明年估计好转可能性也不大，我估计明年很多企业都要放长假了。
+    <div class="TIME">2015-08-18 12:22:30 回复</div>
+    </div>
+    </div>
+    <div class="LI">
+    <div class="USER"><span class="NAME" id=2015081917410720150820094118>morningtiger</span>
+    <div class="TIME">2015-08-19 17:41:07</div></div>
+    <div class="SAY">电子，汽车如果调整，不少地方要糟糕。黄市长的城市发展太粗放了。盛名之下</div>
+    <div class="REPLY">负债太高，一旦资金流来源有阻碍，就要露马脚。
+    <div class="TIME">2015-08-20 09:41:18 回复</div>
+    </div>
+    </div>
+    <div class="LI">
+    <div class="USER"><span class="NAME" id=2015081918250120150820094023>吴维康</span>
+    <div class="TIME">2015-08-19 18:25:01</div></div>
+    <div class="SAY">如果是陌生人，别人不认识你当然不在乎。但是平时我们都处在同事朋友的熟人圈子中的，所以周围的人是会有看法的吧？</div>
+    <div class="REPLY">你还没看懂我说的的东西，在乎不在乎，不在什么圈里，在你自己心里。心里不在乎，还在乎什么熟人或同伙的看法？百毒不侵了。
+    <div class="TIME">2015-08-20 09:40:23 回复</div>
+    </div>
+    </div>
+    <div class="LI">
+    <div class="USER"><span class="NAME" id=2015101411010620151014121028>r4</span>
+    <div class="TIME">2015-10-14 11:01:06</div></div>
+    <div class="SAY">请问忙总，如果算上大连辽宁是不是要好点？我总感觉在东三省里他至少应该比吉林强啊，呵呵</div>
+    <div class="REPLY">是，辽宁比吉林黑龙江强非常多，那两个基本就是农业+资源了，吉林还有一汽，黑龙江基本都不行了，一重也是奄奄一息。
+    <div class="TIME">2015-10-14 12:10:28 回复</div>
+    </div>
+    </div>
+    <div class="LI">
+    <div class="USER"><span class="NAME" id=2015101418022620151015140931>levelworm</span>
+    <div class="TIME">2015-10-14 18:02:26</div></div>
+    <div class="SAY">忙总，不知道中短途物流现在很多都是走公路这个因素是否值得考虑？</div>
+    <div class="REPLY">说明小额，零担物流多，说明大额订单少，说明大家都看不清楚市场趋势，只能维持生产不死而已。
+    <div class="TIME">2015-10-15 14:09:31 回复</div>
+    </div>
+    </div>
+    <div class="LI">
+    <div class="USER"><span class="NAME" id=2015101418140720151015140809>r4</span>
+    <div class="TIME">2015-10-14 18:14:07</div></div>
+    <div class="SAY">忙总，请问一汽按照现在的情况，如果没有了在东三省内部的垄断地位和政府支持未来会发展成什么样子？<br/>另外依赖粮食生产应该是没什么希望了吧？要是政府提高粮食收购价格或者提供高额补贴那岂不是在外面的农民工都要回乡种地了。黑龙江如果人口继续外流最后依赖资源和边境贸易是不是会比现在的情况好一些呢，毕竟人少好养活。</div>
+    <div class="REPLY">黑龙江吃饭是没有问题的，就算全国没饭吃，黑龙江和海南都有吃的。1960年困难时期，全国饿饭，聂荣臻为了两弹一星的队伍有吃的，都到全国各大军区乞讨粮食，组织部队到内蒙打黄羊，组织部队去青海湖捕捞湟鱼，甚至到江西省委书记杨尚奎家坐着不走，要粮食。可是据我知道黑龙江人和海南人介绍他们当时情况，还都不错，海南人不但吃海鲜，吃糖水（白糖煮木薯椰子水，类似现在清补凉），吃饭也没有太大问题，还救援内地亲戚，黑龙江人粮食更富裕。<br/><br/>不过，东北想发财，难度比较大，生产成本比内地高多了，例如每年4个月取暖期，能耗成本比南方高很多。基建投资为了防寒保暖，也高很多。举例来讲，在海口建一个年产300万套载重子午胎生产企业投资，大概只相当于黑龙江投资同样规模，同样设备的70%不到，可变生产成本低10%以上。东北这种制造企业没国家支撑，完全靠市场化竞争，会被南方企业打得满地找牙的。
+    <div class="TIME">2015-10-15 14:08:09 回复</div>
+    </div>
+    </div>
+    </div>
+    </div>
+    <div class="BACK"><a href="../index.html">返回索引页</a></div>
+    </body></html>
