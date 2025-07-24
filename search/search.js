@@ -178,9 +178,9 @@ function searchComment(n) {
                 keywords.forEach(function(keyword, i) {
                     index_comment = comment.indexOf(keyword);
                     index_reply = reply.indexOf(keyword);
-                    // index_nickname = nickname.toLowerCase().indexOf(keyword)
+                    index_nickname = nickname.toLowerCase().indexOf(keyword)
                     // index_uuid = uuid.indexOf(keyword)
-                    if (index_comment < 0 && index_reply < 0) {
+                    if (index_comment < 0 && index_reply < 0 && index_nickname < 0) {
                         isMatch = false;
                     }
                 });

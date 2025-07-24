@@ -5,6 +5,7 @@ from mako.template import Template
 def gen_index_page(data_dir, template_dir, index_dir):
     article_file = f"{data_dir}/wxmang_article.pkl"
     df_article = pd.read_pickle(article_file)
+    df_article = df_article.sort_values("publish_date")
     art_li = []
     for idx in df_article.index:
         columns = ["art_id", "title", "publish_date"]
