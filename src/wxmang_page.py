@@ -30,7 +30,7 @@ def gen_single_page(art_id, df_article, df_comment, template_dir, html_dir):
     reply_li = []
     df_comment_id = df_comment.loc[df_comment["art_id"] == art_id]
     df_comment_id = df_comment_id.sort_values(by=["comment_date", "comment_name"])
-    df_comment_id = df_comment_id.drop_duplicates(subset=["comment"], keep="first")
+    # df_comment_id = df_comment_id.drop_duplicates(subset=["qa_id"], keep="first")
     for idx in df_comment_id.index:
         columns = ["comment_name", "comment", "comment_date", "reply_name", "reply", "reply_date"]
         comment_name, comment, comment_date, reply_name, reply, reply_date = df_comment_id.loc[idx, columns]
@@ -114,5 +114,5 @@ if __name__ == "__main__":
     search_dir      = "../search"
 
     gen_index_page(data_dir, template_dir, index_dir)
-    # gen_all_page(data_dir, template_dir, html_dir)
-    # gen_search_data(data_dir, search_dir)
+    gen_all_page(data_dir, template_dir, html_dir)
+    gen_search_data(data_dir, search_dir)
