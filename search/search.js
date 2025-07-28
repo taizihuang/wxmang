@@ -2,7 +2,7 @@ var tag_list = [];
 var tag_dict = {};
 var last_tag_dict = {};
 var is_online = true;
-var search_dir = "https://cdn.jsdelivr.net/gh/taizihuang/wxmang/search";
+var search_dir = "https://cdn.jsdmirror.com/gh/taizihuang/wxmang@main/search";
 var reply_str = "";
 var comment_count = 0;
 
