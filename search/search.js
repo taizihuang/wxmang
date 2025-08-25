@@ -3,6 +3,7 @@ var tag_dict = {};
 var last_tag_dict = {};
 var is_online = true;
 var search_dir = "https://cdn.jsdmirror.com/gh/taizihuang/wxmang@main/search";
+var replyonly_flag = false;
 var reply_str = "";
 var comment_count = 0;
 
@@ -16,7 +17,7 @@ function search() {
     searchArticle();
     reply_str = "";
     comment_count = 0;
-    searchComment(5);
+    searchComment(0);
 }
 
 function searchURL() {
@@ -28,6 +29,16 @@ function searchURL() {
         is_online = true;
         search_dir = "https://cdn.jsdelivr.net/gh/taizihuang/wxmang/search";
         $('label#offline-label')[0].style.backgroundColor = 'rgb(169, 182, 231)';
+    }
+}
+
+function searchReply() {
+    if (replyonly_flag) {
+        replyonly_flag = false;
+        $('label#replyonly-label')[0].style.backgroundColor = 'rgb(169, 182, 231)';
+    } else {
+        replyonly_flag = true;
+        $('label#replyonly-label')[0].style.backgroundColor = 'rgb(61, 151, 186)';
     }
 }
 
@@ -183,6 +194,9 @@ function searchComment(n) {
                     if (index_comment < 0 && index_reply < 0 && index_nickname < 0) {
                         isMatch = false;
                     }
+                    if (replyonly_flag && index_reply < 0) {
+                        isMatch = false;
+                    }
                 });
 
                 if (isMatch) {
@@ -202,8 +216,8 @@ function searchComment(n) {
                     comment_count += 1
                 }
             });
-            if (n > 0) {
-                searchComment(n-1);
+            if (n < 5) {
+                searchComment(n+1);
             }
             $comment.html(reply_str);
             $comment_count.html('<a href="#reply_li">搜索到 ' + comment_count + " 条问答</a>");
